@@ -81,10 +81,13 @@ const DashBoard = () => {
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
-                  <DashboardIcon className="text-black dark:text-white " />
+                  <DashboardIcon
+                    style={{ fontSize: "21px" }}
+                    className="text-black dark:text-white  "
+                  />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white font-semibold  ">
+                  <span className="text-black dark:text-white font-semibold  text-sm mt-1 ">
                     Dashboard
                   </span>
                 )}
@@ -118,10 +121,10 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center text-black dark:text-white ">
+                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white ">
                         <AdminPanelSettingsIcon
-                          style={{ fontSize: "30px" }}
-                          className="text-black dark:text-white me-2 "
+                          style={{ fontSize: "25px" }}
+                          className="text-black dark:text-white  me-2 "
                         />
                         Admin User
                       </div>
@@ -178,9 +181,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center text-black dark:text-white ">
+                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white ">
                         <SupervisorAccountIcon
-                          style={{ fontSize: "30px" }}
+                          style={{ fontSize: "25px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Website User
@@ -204,10 +207,13 @@ const DashBoard = () => {
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
-                  <AddCardIcon className="text-black dark:text-white " />
+                  <AddCardIcon
+                    style={{ fontSize: "21px" }}
+                    className="text-black dark:text-white "
+                  />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white    ">
+                  <span className="text-black dark:text-white font-semibold  text-sm    ">
                     Advertisement Managment
                   </span>
                 )}
@@ -219,10 +225,13 @@ const DashBoard = () => {
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
-                  <DynamicFormIcon className="text-black dark:text-white " />
+                  <DynamicFormIcon
+                    style={{ fontSize: "21px" }}
+                    className="text-black dark:text-white "
+                  />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white   ">
+                  <span className="text-black dark:text-white font-semibold  text-sm  ">
                     Form management
                   </span>
                 )}
@@ -256,9 +265,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center text-black dark:text-white">
+                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white">
                         <ArticleIcon
-                          style={{ fontSize: "30px" }}
+                          style={{ fontSize: "28px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Page Setting
@@ -304,9 +313,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center text-black dark:text-white">
+                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white">
                         <SettingsIcon
-                          style={{ fontSize: "30px" }}
+                          style={{ fontSize: "25px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Genral Setting

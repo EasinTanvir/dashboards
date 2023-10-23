@@ -26,6 +26,10 @@
   display: none;
 }
 
+.sidebartext {
+  font-size: 14px;
+}
+
 @media screen and (max-width: 892px) {
   .dashboard-sidebar-left {
     width: 0px;

@@ -20,7 +20,7 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
             <div className="flex gap-10 items-center">
               <div>
                 <img
-                  className="rounded-full w-10 ring-1 ring-green-800"
+                  className="rounded-full w-8 ring-1 ring-green-800"
                   src="/assets/logo.png"
                   alt=""
                 />

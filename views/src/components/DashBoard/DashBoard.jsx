@@ -40,7 +40,7 @@ const DashBoard = () => {
             <div className="flex items-center  gap-4">
               <div>
                 <img
-                  className="object-cover w-10"
+                  className="object-cover w-8"
                   src="/assets/admin.png"
                   alt=""
                 />
@@ -68,7 +68,7 @@ const DashBoard = () => {
                   onClick={() => setSidebarOpen(true)}
                   className="flex flex-col gap-1"
                 >
-                  <span className="font-semibold text-black dark:text-white">
+                  <span className="text-sm text-black dark:text-white">
                     Expand
                   </span>
                   <ArrowRightAltIcon className="text-black dark:text-white" />
@@ -82,12 +82,12 @@ const DashBoard = () => {
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
                   <DashboardIcon
-                    style={{ fontSize: "21px" }}
+                    style={{ fontSize: "18px" }}
                     className="text-black dark:text-white  "
                   />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white font-semibold  text-sm mt-1 ">
+                  <span className="text-black dark:text-white font-semibold sidebartext  mt-1 ">
                     Dashboard
                   </span>
                 )}
@@ -121,9 +121,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white ">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
                         <AdminPanelSettingsIcon
-                          style={{ fontSize: "25px" }}
+                          style={{ fontSize: "20px" }}
                           className="text-black dark:text-white  me-2 "
                         />
                         Admin User
@@ -131,20 +131,20 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <PersonAddIcon />
+                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/new-admin">New Admin</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <SupervisorAccountIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <SupervisorAccountIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin">Admin</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <AddModeratorIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <AddModeratorIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin-role">Admin Role</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <PersonAddIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/co-admin">Co Admin</Link>
                         </li>
                       </ul>
@@ -181,9 +181,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white ">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
                         <SupervisorAccountIcon
-                          style={{ fontSize: "25px" }}
+                          style={{ fontSize: "20px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Website User
@@ -191,8 +191,8 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-44 flex justify-center">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 py-2  text-sm px-4 rounded  flex items-center gap-2">
-                          <PersonIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 py-2  text-sm px-4 rounded  flex items-center gap-2">
+                          <PersonIcon style={{ fontSize: "18px" }} />
                           <Link to="/user">All User</Link>
                         </li>
                       </ul>
@@ -208,12 +208,12 @@ const DashBoard = () => {
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
                   <AddCardIcon
-                    style={{ fontSize: "21px" }}
+                    style={{ fontSize: "2=18px" }}
                     className="text-black dark:text-white "
                   />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white font-semibold  text-sm    ">
+                  <span className="text-black dark:text-white font-semibold sidebartext mt-1    ">
                     Advertisement Managment
                   </span>
                 )}
@@ -226,12 +226,12 @@ const DashBoard = () => {
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
                   <DynamicFormIcon
-                    style={{ fontSize: "21px" }}
+                    style={{ fontSize: "18px" }}
                     className="text-black dark:text-white "
                   />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white font-semibold  text-sm  ">
+                  <span className="text-black dark:text-white font-semibold sidebartext  ">
                     Form management
                   </span>
                 )}
@@ -265,9 +265,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white">
                         <ArticleIcon
-                          style={{ fontSize: "28px" }}
+                          style={{ fontSize: "20px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Page Setting
@@ -275,8 +275,8 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <TaskIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext  hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <TaskIcon style={{ fontSize: "18px" }} />
                           <Link>Test</Link>
                         </li>
                       </ul>
@@ -313,9 +313,9 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold  text-sm text-black dark:text-white">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white">
                         <SettingsIcon
-                          style={{ fontSize: "25px" }}
+                          style={{ fontSize: "19px" }}
                           className="text-black dark:text-white me-2"
                         />
                         Genral Setting
@@ -323,20 +323,20 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2">
-                          <LanguageIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2">
+                          <LanguageIcon style={{ fontSize: "18px" }} />
                           <Link>Site Setting</Link>
                         </li>{" "}
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
-                          <WebIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                          <WebIcon style={{ fontSize: "18px" }} />
                           <Link>Third Party</Link>
                         </li>{" "}
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
-                          <DonutSmallIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                          <DonutSmallIcon style={{ fontSize: "18px" }} />
                           <Link>SMTP Setting</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
-                          <EmailIcon />
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                          <EmailIcon style={{ fontSize: "18px" }} />
                           <Link>Email Setting</Link>
                         </li>
                       </ul>

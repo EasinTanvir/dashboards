@@ -13,23 +13,29 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
   };
   return (
     <>
-      <header className="h-16  flex items-center sticky top-0 z-10 headers dark:bg-headerBg bg-white">
+      <header className="h-12  flex items-center sticky top-0 z-10 headers dark:bg-headerBg bg-white">
         <div className="container  mx-auto flex justify-between  ">
           <div className="flex gap-2 items-center"></div>
           <div className="right">
             <div className="flex gap-10 items-center">
               <div>
                 <img
-                  className="rounded-full w-8 ring-1 ring-green-800"
+                  className="rounded-full w-6 ring-1 ring-green-800"
                   src="/assets/logo.png"
                   alt=""
                 />
               </div>
               <div onClick={onDarkHandler}>
                 {dark ? (
-                  <LightModeIcon className="text-4xl text-white cursor-pointer" />
+                  <LightModeIcon
+                    style={{ fontSize: "22px" }}
+                    className=" text-white cursor-pointer"
+                  />
                 ) : (
-                  <DarkModeIcon className="text-4xl text-black cursor-pointer" />
+                  <DarkModeIcon
+                    style={{ fontSize: "22px" }}
+                    className=" text-black cursor-pointer"
+                  />
                 )}
               </div>{" "}
               <div className="mobile-icon me-4">

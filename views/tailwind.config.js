@@ -9,6 +9,7 @@ export default {
         redColor: "#AC1E23",
         deepBlack: "#2E2F3E",
         lightMode: "#F3F5F8",
+        btnColor: "#209864",
       },
     },
   },

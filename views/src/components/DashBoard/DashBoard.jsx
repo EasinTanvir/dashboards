@@ -24,8 +24,11 @@ import WebIcon from "@mui/icons-material/Web";
 import DonutSmallIcon from "@mui/icons-material/DonutSmall";
 import EmailIcon from "@mui/icons-material/Email";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import FlagIcon from "@mui/icons-material/Flag";
+
 const DashBoard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div className="relative">
       <Headers setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
@@ -36,7 +39,11 @@ const DashBoard = () => {
             sidebarOpen ? "active" : ""
           } dark:bg-headerBg bg-white   fixed top-0 z-10 h-screen overflow-auto `}
         >
-          <div className="py-4 flex flex-col px-2 gap-4">
+          <div
+            className={`py-4 flex flex-col ${
+              sidebarOpen ? "gap-0" : "gap-1"
+            } px-2 `}
+          >
             <div className="flex items-center  gap-4">
               <div>
                 <img
@@ -47,7 +54,7 @@ const DashBoard = () => {
               </div>
               {sidebarOpen && (
                 <div>
-                  <h3 className="dark:text-white text-black font-bold text-2xl d">
+                  <h3 className="dark:text-white text-black font-bold text-md d">
                     MEGA
                   </h3>
                 </div>
@@ -56,7 +63,7 @@ const DashBoard = () => {
             {sidebarOpen ? (
               <div className="text-end  w-full px-4">
                 <button onClick={() => setSidebarOpen(false)}>
-                  <span className="text-black dark:text-white text-sm">
+                  <span className="text-black dark:text-white sidebartext">
                     Close
                   </span>{" "}
                   <KeyboardBackspaceIcon className="text-black dark:text-white" />
@@ -68,7 +75,7 @@ const DashBoard = () => {
                   onClick={() => setSidebarOpen(true)}
                   className="flex flex-col gap-1"
                 >
-                  <span className="text-sm text-black dark:text-white">
+                  <span className="text-sm text-black dark:text-white sidebartext">
                     Expand
                   </span>
                   <ArrowRightAltIcon className="text-black dark:text-white" />
@@ -93,20 +100,21 @@ const DashBoard = () => {
                 )}
               </div>
             </Link>
-            <div className="px-4   ">
+            <div className="ps-4   -mt-2 ">
               {!sidebarOpen && (
                 <div
                   onClick={() => setSidebarOpen(true)}
                   className="mt-2 cursor-pointer  "
                 >
                   <AdminPanelSettingsIcon
-                    style={{ fontSize: "30px" }}
+                    style={{ fontSize: "25px" }}
                     className="text-black dark:text-white "
                   />
                 </div>
               )}
+
               {sidebarOpen && (
-                <div className=" -ms-4">
+                <div className="  -ms-4">
                   <Accordion
                     style={{
                       backgroundColor: "transparent",
@@ -116,12 +124,16 @@ const DashBoard = () => {
                   >
                     <AccordionSummary
                       expandIcon={
-                        <ExpandMoreIcon className="ms-1 text-black dark:text-white" />
+                        <ExpandMoreIcon
+                          className={`
+                            -ms-5
+                            text-black   dark:text-white`}
+                        />
                       }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
+                      <div className="flex  items-center font-semibold sidebartext text-black dark:text-white ">
                         <AdminPanelSettingsIcon
                           style={{ fontSize: "20px" }}
                           className="text-black dark:text-white  me-2 "
@@ -129,7 +141,7 @@ const DashBoard = () => {
                         Admin User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
                           <PersonAddIcon style={{ fontSize: "18px" }} />
@@ -153,18 +165,19 @@ const DashBoard = () => {
                 </div>
               )}
             </div>
-            <div className="px-4   ">
+            <div className="ps-4   -mt-2 ">
               {!sidebarOpen && (
                 <div
                   onClick={() => setSidebarOpen(true)}
-                  className="mt-2 cursor-pointer "
+                  className="mt-2 cursor-pointer  "
                 >
                   <SupervisorAccountIcon
-                    style={{ fontSize: "30px" }}
+                    style={{ fontSize: "22px" }}
                     className="text-black dark:text-white"
                   />
                 </div>
               )}
+
               {sidebarOpen && (
                 <div className=" -ms-4">
                   <Accordion
@@ -176,23 +189,26 @@ const DashBoard = () => {
                   >
                     <AccordionSummary
                       expandIcon={
-                        <ExpandMoreIcon className="ms-1 text-black dark:text-white" />
+                        <ExpandMoreIcon
+                          className={`
+                            -ms-5  text-black dark:text-white`}
+                        />
                       }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
                       <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
-                        <SupervisorAccountIcon
+                        <PersonIcon
                           style={{ fontSize: "20px" }}
-                          className="text-black dark:text-white me-2"
+                          className="text-black dark:text-white  me-2 "
                         />
                         Website User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-44 flex justify-center">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 py-2  text-sm px-4 rounded  flex items-center gap-2">
-                          <PersonIcon style={{ fontSize: "18px" }} />
+                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/user">All User</Link>
                         </li>
                       </ul>
@@ -203,12 +219,12 @@ const DashBoard = () => {
             </div>
             <Link
               to="/advertisement"
-              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md"
+              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-3 "
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
                   <AddCardIcon
-                    style={{ fontSize: "2=18px" }}
+                    style={{ fontSize: "20px" }}
                     className="text-black dark:text-white "
                   />
                 </button>
@@ -221,12 +237,12 @@ const DashBoard = () => {
             </Link>{" "}
             <Link
               to="/form-management"
-              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md"
+              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-2"
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
                   <DynamicFormIcon
-                    style={{ fontSize: "18px" }}
+                    style={{ fontSize: "22px" }}
                     className="text-black dark:text-white "
                   />
                 </button>
@@ -237,18 +253,19 @@ const DashBoard = () => {
                 )}
               </div>
             </Link>
-            <div className="px-4   ">
+            <div className="ps-4   -mt-2 ">
               {!sidebarOpen && (
                 <div
                   onClick={() => setSidebarOpen(true)}
-                  className="mt-2 cursor-pointer "
+                  className="mt-2 cursor-pointer  "
                 >
                   <ArticleIcon
-                    style={{ fontSize: "30px" }}
+                    style={{ fontSize: "22px" }}
                     className="text-black dark:text-white"
                   />
                 </div>
               )}
+
               {sidebarOpen && (
                 <div className=" -ms-4">
                   <Accordion
@@ -260,24 +277,29 @@ const DashBoard = () => {
                   >
                     <AccordionSummary
                       expandIcon={
-                        <ExpandMoreIcon className="ms-1 text-black dark:text-white" />
+                        <ExpandMoreIcon
+                          className={`-ms-5 text-black dark:text-white`}
+                        />
                       }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
                         <ArticleIcon
-                          style={{ fontSize: "20px" }}
-                          className="text-black dark:text-white me-2"
+                          style={{ fontSize: "22px" }}
+                          className="text-black dark:text-white me-1"
                         />
                         Page Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 sidebartext  hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
-                          <TaskIcon style={{ fontSize: "18px" }} />
-                          <Link>Test</Link>
+                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                          <ArticleIcon
+                            style={{ fontSize: "22px" }}
+                            className="text-black dark:text-white"
+                          />
+                          <Link to="/new-admin"> Page Setting</Link>
                         </li>
                       </ul>
                     </AccordionDetails>
@@ -285,18 +307,19 @@ const DashBoard = () => {
                 </div>
               )}
             </div>
-            <div className="px-4   ">
+            <div className="ps-4   -mt-2 ">
               {!sidebarOpen && (
                 <div
                   onClick={() => setSidebarOpen(true)}
-                  className="mt-2 cursor-pointer "
+                  className="mt-2 cursor-pointer  "
                 >
                   <SettingsIcon
-                    style={{ fontSize: "30px" }}
+                    style={{ fontSize: "22px" }}
                     className="text-black dark:text-white"
                   />
                 </div>
               )}
+
               {sidebarOpen && (
                 <div className=" -ms-4">
                   <Accordion
@@ -308,36 +331,42 @@ const DashBoard = () => {
                   >
                     <AccordionSummary
                       expandIcon={
-                        <ExpandMoreIcon className="ms-1 text-black dark:text-white" />
+                        <ExpandMoreIcon
+                          className={`-ms-5 text-black dark:text-white`}
+                        />
                       }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white">
+                      <div className="flex items-center font-semibold sidebartext text-black dark:text-white ">
                         <SettingsIcon
-                          style={{ fontSize: "19px" }}
-                          className="text-black dark:text-white me-2"
+                          style={{ fontSize: "22px" }}
+                          className="text-black dark:text-white me-1"
                         />
-                        Genral Setting
+                        General Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack w-48 flex justify-center">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2">
                           <LanguageIcon style={{ fontSize: "18px" }} />
-                          <Link>Site Setting</Link>
+                          <Link to="/site-setting">Site Setting</Link>
                         </li>{" "}
                         <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
                           <WebIcon style={{ fontSize: "18px" }} />
-                          <Link>Third Party</Link>
+                          <Link to="/thirdparty-setting">Third Party</Link>
                         </li>{" "}
                         <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
                           <DonutSmallIcon style={{ fontSize: "18px" }} />
-                          <Link>SMTP Setting</Link>
+                          <Link to="/smtp-setting">SMTP Setting</Link>
                         </li>
                         <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
                           <EmailIcon style={{ fontSize: "18px" }} />
-                          <Link>Email Setting</Link>
+                          <Link to="/email-setting">Email Setting</Link>
+                        </li>
+                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                          <FlagIcon style={{ fontSize: "18px" }} />
+                          <Link to="/country-setting">Country Setting</Link>
                         </li>
                       </ul>
                     </AccordionDetails>

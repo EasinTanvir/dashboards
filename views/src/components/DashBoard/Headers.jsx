@@ -4,9 +4,11 @@ import ReorderIcon from "@mui/icons-material/Reorder";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ClearIcon from "@mui/icons-material/Clear";
+import { themContext } from "../../context/themeContext";
 
 const Headers = ({ setSidebarOpen, sidebarOpen }) => {
-  const [dark, setDark] = useState(false);
+  const { dark, setDark } = themContext();
+
   const onDarkHandler = () => {
     document.body.classList.toggle("dark");
     setDark(!dark);

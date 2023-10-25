@@ -11,6 +11,9 @@ export default {
         lightMode: "#F3F5F8",
         btnColor: "#209864",
       },
+      screens: {
+        lg: "1040px",
+      },
     },
   },
   plugins: [],

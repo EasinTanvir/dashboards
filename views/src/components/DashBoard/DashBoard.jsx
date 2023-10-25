@@ -126,7 +126,7 @@ const DashBoard = () => {
                       expandIcon={
                         <ExpandMoreIcon
                           className={`
-                            -ms-5
+                            -ms-4
                             text-black   dark:text-white`}
                         />
                       }
@@ -141,7 +141,7 @@ const DashBoard = () => {
                         Admin User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 me-2 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
                           <PersonAddIcon style={{ fontSize: "18px" }} />
@@ -191,7 +191,7 @@ const DashBoard = () => {
                       expandIcon={
                         <ExpandMoreIcon
                           className={`
-                            -ms-5  text-black dark:text-white`}
+                            -ms-4  text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -205,7 +205,7 @@ const DashBoard = () => {
                         Website User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  me-2 flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
                           <PersonAddIcon style={{ fontSize: "18px" }} />
@@ -278,7 +278,7 @@ const DashBoard = () => {
                     <AccordionSummary
                       expandIcon={
                         <ExpandMoreIcon
-                          className={`-ms-5 text-black dark:text-white`}
+                          className={`-ms-4 text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -292,7 +292,7 @@ const DashBoard = () => {
                         Page Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
+                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
                           <ArticleIcon
@@ -332,7 +332,7 @@ const DashBoard = () => {
                     <AccordionSummary
                       expandIcon={
                         <ExpandMoreIcon
-                          className={`-ms-5 text-black dark:text-white`}
+                          className={`-ms-4 text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -346,7 +346,7 @@ const DashBoard = () => {
                         General Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2">
                           <LanguageIcon style={{ fontSize: "18px" }} />

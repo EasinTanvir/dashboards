@@ -17,7 +17,17 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
     <>
       <header className="h-12  flex items-center sticky top-0 z-10 headers dark:bg-headerBg bg-white">
         <div className="container  mx-auto flex justify-between  ">
-          <div className="flex gap-2 items-center"></div>
+          <div className="mx-4 flex gap-2 items-center">
+            <div className="mobile-icon ms-4">
+              <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+                {sidebarOpen ? (
+                  <ClearIcon className="text-4xl text-black dark:text-white cursor-pointer" />
+                ) : (
+                  <ReorderIcon className="text-4xl text-black dark:text-white cursor-pointer" />
+                )}
+              </button>
+            </div>
+          </div>
           <div className="right">
             <div className="flex gap-10 items-center">
               <div>
@@ -40,15 +50,6 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
                   />
                 )}
               </div>{" "}
-              <div className="mobile-icon me-4">
-                <button onClick={() => setSidebarOpen(!sidebarOpen)}>
-                  {sidebarOpen ? (
-                    <ClearIcon className="text-4xl text-black dark:text-white cursor-pointer" />
-                  ) : (
-                    <ReorderIcon className="text-4xl text-black dark:text-white cursor-pointer" />
-                  )}
-                </button>
-              </div>
               <span></span>
             </div>
           </div>

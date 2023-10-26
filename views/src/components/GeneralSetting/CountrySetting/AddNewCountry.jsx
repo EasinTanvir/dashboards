@@ -1,47 +1,50 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import React, { useState } from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { themContext } from "../../../context/themeContext";
-
-function EditModalCountry({ open, setOpen }) {
-  const { dark, setDark } = themContext();
-
+const AddNewCountry = () => {
+  const { dark } = themContext();
+  const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div>
-      <Modal
-        open={open}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className="country-modal flex justify-center">
-          <div className="country-modal-content bg-lightMode dark:bg-headerBg mt-10 py-4 px-6 rounded-md">
-            <div>
-              <form>
-                <div className="dark:text-white   text-center">
-                  <h1 className="font-bold text-2xl ">
-                    Update Country Data
-                    <hr className="mt-2" />
-                  </h1>
-                </div>
-                <div className="mt-4">
-                  <form className="flex flex-col gap-4">
+    <div className="country-right   w-auto  mt-3">
+      {" "}
+      <Accordion expanded={accordionTwo}>
+        <AccordionSummary
+          onClick={() => setAccordionTwo(!accordionTwo)}
+          style={
+            dark ? { backgroundColor: "#242530" } : { backgroundColor: "white" }
+          }
+          expandIcon={<ExpandMoreIcon className="dark:text-white" />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className="dark:text-white">
+            <span className="text-black dark:text-white font-bold text-lg">
+              Add New Country
+            </span>
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails className="dark:bg-gray-700">
+          <div className="relative overflow-x-auto  sm:rounded-lg">
+            <form>
+              <div className="mt-4">
+                <form>
+                  <div className="flex md:flex-row flex-col items-center gap-2">
                     <div className="flex flex-col gap-0">
-                      <label
-                        className="dark:text-white text-black font-bold mb-2 text-lg"
-                        htmlFor=""
-                      >
+                      <label className="dark:text-white text-black" htmlFor="">
                         Country Name
                       </label>
                       <input
+                        required
                         className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""
-                        value="Bangladesh"
-                        required
-                        placeholder="type country full name"
+                        placeholder="Country Name"
                       />
                     </div>
                     <div className="flex flex-col gap-0">
@@ -53,9 +56,8 @@ function EditModalCountry({ open, setOpen }) {
                         className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
-                        value="BD"
                         id=""
-                        placeholder="type country 2-letetr code"
+                        placeholder="Country Code"
                       />
                     </div>
                     <div className="flex flex-col gap-0">
@@ -64,12 +66,11 @@ function EditModalCountry({ open, setOpen }) {
                       </label>
                       <input
                         required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
-                        value="BDT"
                         name=""
                         id=""
-                        placeholder="type currency code"
+                        placeholder="Currency Code"
                       />
                     </div>
                     <div className="flex flex-col gap-0">
@@ -78,12 +79,11 @@ function EditModalCountry({ open, setOpen }) {
                       </label>
                       <input
                         required
-                        value={+88}
                         className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""
-                        placeholder="type phone code"
+                        placeholder=" Phone Code"
                       />
                     </div>
                     <div className="flex flex-col gap-0">
@@ -92,12 +92,11 @@ function EditModalCountry({ open, setOpen }) {
                       </label>
                       <input
                         required
-                        value="Uttara"
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""
-                        placeholder="type country state"
+                        placeholder=" State"
                       />
                     </div>{" "}
                     <div className="flex flex-col gap-0">
@@ -105,39 +104,31 @@ function EditModalCountry({ open, setOpen }) {
                         City
                       </label>
                       <input
-                        value="Dhaka"
                         required
                         className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""
-                        placeholder="type country city"
+                        placeholder="City"
                       />
                     </div>
-                    <div className="flex gap-2 mt-2">
-                      <button
-                        className="btn rounded-md bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
-                        type="submit"
-                      >
-                        Add New Country
-                      </button>
-                      <button
-                        onClick={() => setOpen(false)}
-                        className="btn rounded-md bg-redColor hover:text-gray-300 px-4 py-2 text-white"
-                        type="button"
-                      >
-                        Cacel
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </form>
-            </div>
+                  </div>
+                  <div className=" gap-2 mt-4 mb-4">
+                    <button
+                      className="btn rounded-md bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      type="submit"
+                    >
+                      Add New Country
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </form>
           </div>
-        </div>
-      </Modal>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
-}
+};
 
-export default EditModalCountry;
+export default AddNewCountry;

@@ -11,15 +11,15 @@ const CountryHeader = () => {
   const [select, setSelect] = useState(1);
 
   return (
-    <div className=" pt-2 ">
-      <div className="flex justify-start md:justify-end">
-        <ul className="flex sm:flex-row flex-col gap-8   min-w-fit bg-white text-black dark:bg-deepBlack dark:text-white px-10  rounded-lg ">
+    <div className=" my-1 ">
+      <div className="flex justify-start">
+        <ul className="flex sm:flex-row flex-wrap gap-2   min-w-fit bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
           <Link to="">
             <li
               onClick={() => setSelect(1)}
               className={`hover:bg-redColor ${
                 select === 1 ? "bg-redColor text-white" : ""
-              } hover:text-white  duration-500 transition rounded px-3 py-3 `}
+              } hover:text-white  duration-500 transition rounded px-2 py-3 `}
             >
               <div className="flex gap-1 items-center">
                 <LanguageIcon style={{ fontSize: "18px" }} />
@@ -61,18 +61,18 @@ const CountryHeader = () => {
               onClick={() => setSelect(4)}
               className={`hover:bg-redColor ${
                 select === 4 ? "bg-redColor text-white" : ""
-              } hover:text-white duration-500 transition rounded px-3 py-3 `}
+              } hover:text-white duration-500 transition rounded px-3 py-2 `}
             >
               <div className="flex gap-1 items-center"></div>
-              <GroupIcon style={{ fontSize: "20px" }} />
-              <span className="text-sm">Neighbourhoods</span>
+              <GroupIcon style={{ fontSize: "18px" }} />
+              <span className="text-sm ms-1">Neighbourhoods</span>
             </li>
           </Link>
         </ul>
       </div>
 
-      <div>
-        <div className=" flex justify-end px-8 my-6">
+      {/* <div>
+        <div className="  my-6">
           <button
             onClick={() => setOpen(true)}
             className="text-white flex gap-1 items-center bg-redColor px-4 py-2 rounded-md hover:text-gray-400 "
@@ -84,7 +84,7 @@ const CountryHeader = () => {
           </button>
         </div>
         <ModalCountry open={open} setOpen={setOpen} />
-      </div>
+      </div> */}
     </div>
   );
 };

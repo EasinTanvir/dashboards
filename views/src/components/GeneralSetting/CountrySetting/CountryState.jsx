@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { DataGrid } from "@mui/x-data-grid";
 import { themContext } from "../../../context/themeContext";
+import AddNewState from "./AddNewState";
 
 const rows = [
   {
@@ -65,12 +66,14 @@ const columns = [
 
 const CountryState = () => {
   const { dark, setDark } = themContext();
+  const [accordionOne, setAccordionOne] = useState(true);
 
   return (
-    <div>
-      <div className="country-left  md:w-[50%] w-[100%]  ">
-        <Accordion>
+    <div className="flex gap-3  md:flex-row flex-col">
+      <div className="country-left  md:w-fit w-[100%]  ">
+        <Accordion expanded={accordionOne}>
           <AccordionSummary
+            onClick={() => setAccordionOne(!accordionOne)}
             style={
               dark
                 ? { backgroundColor: "#242530" }
@@ -107,6 +110,8 @@ const CountryState = () => {
           </AccordionDetails>
         </Accordion>
       </div>
+
+      <AddNewState />
     </div>
   );
 };

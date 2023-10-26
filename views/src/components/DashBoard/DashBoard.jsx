@@ -83,6 +83,7 @@ const DashBoard = () => {
               </div>
             )}
             <Link
+              onClick={() => setSidebarOpen(false)}
               to="/"
               className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md"
             >
@@ -143,19 +144,31 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 me-2 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/new-admin">New Admin</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <SupervisorAccountIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin">Admin</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <AddModeratorIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin-role">Admin Role</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/co-admin">Co Admin</Link>
                         </li>
@@ -207,7 +220,10 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack  me-2 flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/user">All User</Link>
                         </li>
@@ -218,6 +234,7 @@ const DashBoard = () => {
               )}
             </div>
             <Link
+              onClick={() => setSidebarOpen(false)}
               to="/advertisement"
               className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-3 "
             >
@@ -236,6 +253,7 @@ const DashBoard = () => {
               </div>
             </Link>{" "}
             <Link
+              onClick={() => setSidebarOpen(false)}
               to="/form-management"
               className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-2"
             >
@@ -294,7 +312,10 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                        >
                           <ArticleIcon
                             style={{ fontSize: "22px" }}
                             className="text-black dark:text-white"
@@ -348,23 +369,38 @@ const DashBoard = () => {
                     </AccordionSummary>
                     <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2"
+                        >
                           <LanguageIcon style={{ fontSize: "18px" }} />
                           <Link to="/site-setting">Site Setting</Link>
                         </li>{" "}
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                        >
                           <WebIcon style={{ fontSize: "18px" }} />
                           <Link to="/thirdparty-setting">Third Party</Link>
                         </li>{" "}
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                        >
                           <DonutSmallIcon style={{ fontSize: "18px" }} />
                           <Link to="/smtp-setting">SMTP Setting</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                        >
                           <EmailIcon style={{ fontSize: "18px" }} />
                           <Link to="/email-setting">Email Setting</Link>
                         </li>
-                        <li className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm">
+                        <li
+                          onClick={() => setSidebarOpen(false)}
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                        >
                           <FlagIcon style={{ fontSize: "18px" }} />
                           <Link to="/country-setting">Country Setting</Link>
                         </li>

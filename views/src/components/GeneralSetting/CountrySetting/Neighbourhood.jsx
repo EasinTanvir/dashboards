@@ -15,12 +15,14 @@ const rows = [
     id: 1,
     countryName: "Bangladesh",
     state: "Uttara",
+    city: "Dhaka",
     neighbourhood: "Tangail",
   },
   {
     id: 2,
     countryName: "Bangladesh",
     state: "Uttara",
+    city: "Dhaka",
     neighbourhood: "Motijil",
   },
 ];
@@ -42,6 +44,12 @@ const columns = [
   {
     field: "state",
     headerName: "State",
+    width: 80,
+    cellClassName: "text-black dark:text-white",
+  },
+  {
+    field: "city",
+    headerName: "City",
     width: 80,
     cellClassName: "text-black dark:text-white",
   },

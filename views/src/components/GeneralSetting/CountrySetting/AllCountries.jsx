@@ -193,11 +193,11 @@ const AllCountries = () => {
       sortable: false,
       width: 60,
       cellClassName: "text-black dark:text-white",
-      renderHeader: (params) => {
-        <Tooltip placement="top" title="Sate">
-          <strong className="bold-header">Sate</strong>
-        </Tooltip>;
-      },
+      renderHeader: (params) => (
+        <Tooltip placement="top" title="State">
+          <strong className="bold-header">State</strong>
+        </Tooltip>
+      ),
     },
     {
       field: "city",

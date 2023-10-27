@@ -10,7 +10,7 @@ const AddNewCountry = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div className="country-right   w-auto  mt-3">
+    <div className="country-right    sm:w-fit  mt-3">
       {" "}
       <Accordion expanded={accordionTwo}>
         <AccordionSummary
@@ -23,7 +23,7 @@ const AddNewCountry = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold text-lg">
+            <span className="text-black dark:text-white font-bold text-md">
               Add New Country
             </span>
           </Typography>
@@ -33,84 +33,106 @@ const AddNewCountry = () => {
             <form>
               <div className="mt-4">
                 <form>
-                  <div className="flex md:flex-row flex-col items-center gap-2">
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Country Name
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Country Name"
-                      />
+                  <div className="flex  flex-col  gap-2">
+                    <div className="flex sm:flex-row flex-col gap-2">
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Country Name
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Country Name"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Country Code
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Country Code"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Currency Code
+                        </label>
+                        <input
+                          required
+                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Currency Code"
+                        />
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Country Code
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Country Code"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Currency Code
-                      </label>
-                      <input
-                        required
-                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Currency Code"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Phone Code
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder=" Phone Code"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        State
-                      </label>
-                      <input
-                        required
-                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder=" State"
-                      />
-                    </div>{" "}
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        City
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="City"
-                      />
+                    <div className="flex gap-2 sm:flex-row flex-col">
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Phone Code
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder=" Phone Code"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          State
+                        </label>
+                        <input
+                          required
+                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder=" State"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          City
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="City"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className=" gap-2 mt-4 mb-4">

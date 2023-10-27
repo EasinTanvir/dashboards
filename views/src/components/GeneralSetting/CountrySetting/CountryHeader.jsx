@@ -23,7 +23,7 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center">
                 <LanguageIcon style={{ fontSize: "18px" }} />
-                <span className="text-xs">Country</span>
+                <span className="text-sm font-semibold">Country</span>
               </div>
             </li>
           </Link>
@@ -37,7 +37,7 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center">
                 <HomeIcon style={{ fontSize: "18px" }} />
-                <span className="text-xs">States</span>
+                <span className="text-sm font-semibold">States</span>
               </div>
             </li>
           </Link>
@@ -51,7 +51,7 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center">
                 <LocationCityIcon style={{ fontSize: "18px" }} />
-                <span className="text-xs">Cities</span>
+                <span className="text-sm font-semibold">Cities</span>
               </div>
             </li>
           </Link>
@@ -65,7 +65,7 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center"></div>
               <GroupIcon style={{ fontSize: "18px" }} />
-              <span className="text-sm ms-1">Neighbourhoods</span>
+              <span className="text-sm font-semibold ms-1">Neighbourhoods</span>
             </li>
           </Link>
         </ul>

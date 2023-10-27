@@ -136,18 +136,20 @@ const AllCountries = () => {
       field: "id",
       headerName: "ID",
       sortable: false,
-      width: 40,
-      cellClassName: "text-black dark:text-white",
-      renderHeader: (params) => <strong className="bold-header">ID</strong>,
+      maxWidth: 10,
+      cellClassName: "text-black dark:text-white ",
+      renderHeader: (params) => (
+        <b style={{ fontSize: "14px", fontWeight: 900 }}>ID</b>
+      ),
     },
     {
       field: "countryName",
       sortable: false,
       width: 120,
-      cellClassName: "text-black dark:text-white",
+      cellClassName: "text-black dark:text-white border border-black",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country Name">
-          <strong className="bold-header">Country Name</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
         </Tooltip>
       ),
     },
@@ -159,7 +161,7 @@ const AllCountries = () => {
 
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country 2-Letter Code">
-          <strong className="bold-header">Country Code</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Code</b>
         </Tooltip>
       ),
     },
@@ -171,7 +173,7 @@ const AllCountries = () => {
       cellClassName: "text-black dark:text-white",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Currency Code">
-          <strong className="bold-header">Currency Code</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>Currency Code</b>
         </Tooltip>
       ),
     },
@@ -183,7 +185,7 @@ const AllCountries = () => {
       cellClassName: "text-black dark:text-white",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Phone Code">
-          <strong className="bold-header">Phone Code</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>Phone Code</b>
         </Tooltip>
       ),
     },
@@ -191,11 +193,11 @@ const AllCountries = () => {
       field: "state",
       headerName: "Sate",
       sortable: false,
-      width: 60,
-      cellClassName: "text-black dark:text-white",
+      width: 90,
+      cellClassName: "text-black dark:text-white border-none outline-none",
       renderHeader: (params) => (
         <Tooltip placement="top" title="State">
-          <strong className="bold-header">State</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
         </Tooltip>
       ),
     },
@@ -203,12 +205,12 @@ const AllCountries = () => {
       field: "city",
       headerName: "City",
       sortable: false,
-      width: 70,
+      width: 90,
       cellClassName: "text-black dark:text-white",
       headerclassname: "bold-header",
       renderHeader: (params) => (
         <Tooltip placement="top" title="City">
-          <strong className="bold-header">City</strong>
+          <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
         </Tooltip>
       ),
     },
@@ -218,40 +220,56 @@ const AllCountries = () => {
       sortable: false,
       width: 90,
       cellClassName: "text-black dark:text-white",
-      renderHeader: (params) => <strong className="bold-header">Action</strong>,
-      renderCell: (params) => (
-        <>
-          {console.log(params)}
-          <button
-            className="btn bg-redColor px-2 py-2 rounded-md"
-            id="basic-button"
-            aria-controls={opens ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={opens ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <span>
-              <EditIcon className="text-white" style={{ fontSize: "18px" }} />
-            </span>
-            <span className="text-white"> Action</span>
-          </button>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={opens}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose2}>Edit</MenuItem>
-            <MenuItem onClick={handleClose3}>Delete</MenuItem>
-          </Menu>
-        </>
+      renderHeader: (params) => (
+        <b style={{ fontSize: "14px", fontWeight: 900 }}>Action</b>
       ),
-      // renderCell: renderDetailsButton
+      renderCell: (params) => {
+        // Define a function to handle the cell click
+        const handleCellClick = (event) => {
+          // Prevent the click event from propagating to the row selection
+          event.stopPropagation();
+          // Add your custom cell click logic here
+          // For example, you can trigger an action when the cell is clicked
+          console.log("Cell clicked in row with ID: ", params.id);
+        };
+
+        return (
+          <div onClick={handleCellClick}>
+            {/* Your cell content */}
+            <button
+              className="btn bg-redColor px-2 py-1 rounded-md"
+              id="basic-button"
+              aria-controls={opens ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={opens ? "true" : undefined}
+              onClick={handleClick}
+            >
+              <span>
+                <EditIcon className="text-white" style={{ fontSize: "18px" }} />
+              </span>
+              <span className="text-white"> Action</span>
+            </button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={opens}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose2}>Edit</MenuItem>
+              <MenuItem onClick={handleClose3}>Delete</MenuItem>
+            </Menu>
+          </div>
+        );
+      },
     },
   ];
+
+  const getRowClassName = () => {
+    return "custom-row-class";
+  };
 
   const [imageLoader, setImageLoader] = useState(false);
 
@@ -286,14 +304,15 @@ const AllCountries = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <button className="dark:text-white text-black font-bold text-lg">
+              <button className="dark:text-white text-black font-bold text-md ">
                 Show Countries Content
               </button>
             </AccordionSummary>
             <AccordionDetails className="dark:bg-gray-700">
               <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
                 <DataGrid
-                  disableRowSelectionOnClick={true}
+                  // disableRowSelectionOnClick={true}
+                  unstable_ignoreValueFormatterDuringExport
                   onRowSelectionModelChange={(select) => {
                     console.log(select);
                   }}
@@ -310,6 +329,7 @@ const AllCountries = () => {
                   }}
                   pageSizeOptions={[5, 10]}
                   checkboxSelection
+                  getRowClassName={getRowClassName}
                 />
               </div>
             </AccordionDetails>
@@ -331,7 +351,7 @@ const AllCountries = () => {
               id="panel1a-header"
             >
               <Typography className="dark:text-white">
-                <span className="text-black dark:text-white font-bold text-lg">
+                <span className="text-black dark:text-white font-bold text-md">
                   Bulk Import/Upload
                 </span>
               </Typography>
@@ -351,6 +371,7 @@ const AllCountries = () => {
                       type="file"
                       name=""
                       id="file"
+                      accept=".csv"
                     />
                   </div>
 

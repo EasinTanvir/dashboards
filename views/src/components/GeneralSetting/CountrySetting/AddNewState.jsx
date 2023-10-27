@@ -23,7 +23,7 @@ const AddNewState = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold text-lg">
+            <span className="text-black dark:text-white font-bold text-md">
               Add New State
             </span>
           </Typography>
@@ -35,7 +35,10 @@ const AddNewState = () => {
                 <form>
                   <div className="flex md:flex-row flex-col items-center gap-2">
                     <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
+                      <label
+                        className="dark:text-white text-black font-semibold"
+                        htmlFor=""
+                      >
                         Country Name
                       </label>
                       <input
@@ -48,12 +51,15 @@ const AddNewState = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
+                      <label
+                        className="dark:text-white text-black font-semibold"
+                        htmlFor=""
+                      >
                         State
                       </label>
                       <input
                         required
-                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                        className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""

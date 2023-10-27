@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Headers from "./Headers";
 import ReorderIcon from "@mui/icons-material/Reorder";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -27,7 +27,23 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import FlagIcon from "@mui/icons-material/Flag";
 
 const DashBoard = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const [isScreenSmall, setIsScreenSmall] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsScreenSmall(window.innerWidth < 600);
+    };
+
+    // Attach the event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="relative">
@@ -44,7 +60,7 @@ const DashBoard = () => {
               sidebarOpen ? "gap-0" : "gap-1"
             } px-2 `}
           >
-            <div className="flex items-center  gap-4">
+            <div className="flex items-center ps-3  gap-4">
               <div>
                 <img
                   className="object-cover w-8"
@@ -61,7 +77,7 @@ const DashBoard = () => {
               )}
             </div>
             {sidebarOpen ? (
-              <div className="text-end  w-full px-4">
+              <div className="text-end  w-full">
                 <button onClick={() => setSidebarOpen(false)}>
                   <span className="text-black dark:text-white sidebartext">
                     Close
@@ -83,9 +99,9 @@ const DashBoard = () => {
               </div>
             )}
             <Link
-              onClick={() => setSidebarOpen(false)}
+              onClick={isScreenSmall && (() => setSidebarOpen(false))}
               to="/"
-              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md"
+              className="  px-4 py-2  rounded-md"
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
@@ -124,10 +140,11 @@ const DashBoard = () => {
                     }}
                   >
                     <AccordionSummary
+                      style={{ paddingLeft: "16px", paddingRight: "0px" }}
                       expandIcon={
                         <ExpandMoreIcon
                           className={`
-                            -ms-4
+                            
                             text-black   dark:text-white`}
                         />
                       }
@@ -145,28 +162,36 @@ const DashBoard = () => {
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 me-2 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/new-admin">New Admin</Link>
                         </li>
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <SupervisorAccountIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin">Admin</Link>
                         </li>
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <AddModeratorIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin-role">Admin Role</Link>
                         </li>
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
@@ -201,10 +226,11 @@ const DashBoard = () => {
                     }}
                   >
                     <AccordionSummary
+                      style={{ paddingLeft: "16px", paddingRight: "0px" }}
                       expandIcon={
                         <ExpandMoreIcon
                           className={`
-                            -ms-4  text-black dark:text-white`}
+                              text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -221,7 +247,9 @@ const DashBoard = () => {
                     <AccordionDetails className="bg-lightMode dark:bg-deepBlack  me-2 flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
@@ -234,9 +262,9 @@ const DashBoard = () => {
               )}
             </div>
             <Link
-              onClick={() => setSidebarOpen(false)}
+              onClick={isScreenSmall && (() => setSidebarOpen(false))}
               to="/advertisement"
-              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-3 "
+              className=" px-4 py-2  rounded-md -mt-3 "
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
@@ -253,9 +281,9 @@ const DashBoard = () => {
               </div>
             </Link>{" "}
             <Link
-              onClick={() => setSidebarOpen(false)}
+              onClick={isScreenSmall && (() => setSidebarOpen(false))}
               to="/form-management"
-              className="hover:bg-gray-300 dark:hover:bg-deepBlack px-4 py-2  rounded-md -mt-2"
+              className=" px-4 py-2  rounded-md -mt-2"
             >
               <div className="flex items-center gap-2 ">
                 <button onClick={() => setSidebarOpen(true)}>
@@ -294,9 +322,10 @@ const DashBoard = () => {
                     }}
                   >
                     <AccordionSummary
+                      style={{ paddingLeft: "16px", paddingRight: "0px" }}
                       expandIcon={
                         <ExpandMoreIcon
-                          className={`-ms-4 text-black dark:text-white`}
+                          className={` text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -313,7 +342,9 @@ const DashBoard = () => {
                     <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
                         >
                           <ArticleIcon
@@ -351,9 +382,10 @@ const DashBoard = () => {
                     }}
                   >
                     <AccordionSummary
+                      style={{ paddingLeft: "16px", paddingRight: "0px" }}
                       expandIcon={
                         <ExpandMoreIcon
-                          className={`-ms-4 text-black dark:text-white`}
+                          className={` text-black dark:text-white`}
                         />
                       }
                       aria-controls="panel1a-content"
@@ -370,35 +402,45 @@ const DashBoard = () => {
                     <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2"
                         >
                           <LanguageIcon style={{ fontSize: "18px" }} />
                           <Link to="/site-setting">Site Setting</Link>
                         </li>{" "}
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <WebIcon style={{ fontSize: "18px" }} />
                           <Link to="/thirdparty-setting">Third Party</Link>
                         </li>{" "}
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <DonutSmallIcon style={{ fontSize: "18px" }} />
                           <Link to="/smtp-setting">SMTP Setting</Link>
                         </li>
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <EmailIcon style={{ fontSize: "18px" }} />
                           <Link to="/email-setting">Email Setting</Link>
                         </li>
                         <li
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <FlagIcon style={{ fontSize: "18px" }} />

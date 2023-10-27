@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { DataGrid } from "@mui/x-data-grid";
 import { themContext } from "../../../context/themeContext";
 import AddNewState from "./AddNewState";
+import { Tooltip } from "@mui/material";
 
 const rows = [
   {
@@ -45,22 +46,38 @@ const rows = [
 const columns = [
   {
     field: "id",
-    headerName: "ID",
+    sortable: false,
     width: 70,
     cellClassName: "text-black dark:text-white",
+    renderHeader: (params) => (
+      <Tooltip placement="top" title="ID">
+        <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
+      </Tooltip>
+    ),
   },
   {
     field: "countryName",
-    headerName: "Country Name",
     width: 130,
+    sortable: false,
+    renderHeader: (params) => (
+      <Tooltip placement="top" title="Country Name">
+        <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
+      </Tooltip>
+    ),
     cellClassName: "text-black dark:text-white",
   },
 
   {
     field: "state",
-    headerName: "State",
+    sortable: false,
+
     width: 80,
     cellClassName: "text-black dark:text-white",
+    renderHeader: (params) => (
+      <Tooltip placement="top" title="State">
+        <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
+      </Tooltip>
+    ),
   },
 ];
 
@@ -83,7 +100,7 @@ const CountryState = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <button className="dark:text-white text-black font-bold text-lg">
+            <button className="dark:text-white text-black font-bold text-md">
               Show Countries And State
             </button>
           </AccordionSummary>

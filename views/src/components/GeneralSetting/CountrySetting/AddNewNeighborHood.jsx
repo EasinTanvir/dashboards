@@ -10,7 +10,7 @@ const AddNewNeighborHood = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div className="country-right   w-fit overflow-auto  ">
+    <div className="country-right   w-fit   ">
       <Accordion expanded={accordionTwo}>
         <AccordionSummary
           onClick={() => setAccordionTwo(!accordionTwo)}
@@ -22,7 +22,7 @@ const AddNewNeighborHood = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold text-lg">
+            <span className="text-black dark:text-white font-bold text-md">
               Add New Neighbourhood
             </span>
           </Typography>
@@ -32,58 +32,75 @@ const AddNewNeighborHood = () => {
             <form>
               <div className="mt-4">
                 <form>
-                  <div className="flex md:flex-row flex-col items-center gap-2">
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Country Name
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Country Name"
-                      />
+                  <div className="flex flex-col  gap-2">
+                    <div className="flex sm:flex-row flex-col gap-1">
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Country Name
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Country Name"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          State
+                        </label>
+                        <input
+                          required
+                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder=" State"
+                        />
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        State
-                      </label>
-                      <input
-                        required
-                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder=" State"
-                      />
-                    </div>{" "}
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        City
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="City"
-                      />
-                    </div>{" "}
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Neighbourhood
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Neighbourhood"
-                      />
+
+                    <div className="flex sm:flex-row flex-col  gap-1">
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          City
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="City"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Neighbourhood
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Neighbourhood"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className=" gap-2 mt-4 mb-4">

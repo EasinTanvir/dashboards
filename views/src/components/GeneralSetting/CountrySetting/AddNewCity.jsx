@@ -22,7 +22,7 @@ const AddNewCity = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold text-lg">
+            <span className="text-black dark:text-white font-bold text-md">
               Add New City
             </span>
           </Typography>
@@ -32,35 +32,46 @@ const AddNewCity = () => {
             <form>
               <div className="mt-4">
                 <form>
-                  <div className="flex md:flex-row flex-col items-center gap-2">
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        Country Name
-                      </label>
-                      <input
-                        required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Country Name"
-                      />
+                  <div className="flex  flex-col  gap-2">
+                    <div className="flex gap-2">
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          Country Name
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Country Name"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0">
+                        <label
+                          className="dark:text-white text-black font-semibold"
+                          htmlFor=""
+                        >
+                          State
+                        </label>
+                        <input
+                          required
+                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder=" State"
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
-                        State
-                      </label>
-                      <input
-                        required
-                        className="text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder=" State"
-                      />
-                    </div>{" "}
-                    <div className="flex flex-col gap-0">
-                      <label className="dark:text-white text-black" htmlFor="">
+                      <label
+                        className="dark:text-white text-black font-semibold"
+                        htmlFor=""
+                      >
                         City
                       </label>
                       <input

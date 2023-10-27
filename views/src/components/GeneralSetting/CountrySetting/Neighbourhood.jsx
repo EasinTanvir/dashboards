@@ -33,7 +33,7 @@ const columns = [
     field: "id",
     sortable: false,
     width: 70,
-    cellClassName: "text-black dark:text-white",
+    cellClassName: "text-black dark:text-white border",
     renderHeader: (params) => (
       <Tooltip placement="top" title="ID">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
@@ -49,7 +49,7 @@ const columns = [
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
       </Tooltip>
     ),
-    cellClassName: "text-black dark:text-white",
+    cellClassName: "text-black dark:text-white border",
   },
 
   {
@@ -57,7 +57,7 @@ const columns = [
     sortable: false,
 
     width: 80,
-    cellClassName: "text-black dark:text-white",
+    cellClassName: "text-black dark:text-white border",
     renderHeader: (params) => (
       <Tooltip placement="top" title="State">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
@@ -69,7 +69,7 @@ const columns = [
     sortable: false,
 
     width: 80,
-    cellClassName: "text-black dark:text-white",
+    cellClassName: "text-black dark:text-white border",
     renderHeader: (params) => (
       <Tooltip placement="top" title="City">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
@@ -82,7 +82,7 @@ const columns = [
     sortable: false,
 
     width: 120,
-    cellClassName: "text-black dark:text-white",
+    cellClassName: "text-black dark:text-white border",
     renderHeader: (params) => (
       <Tooltip placement="top" title="Neighbourhood">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Neighbourhood</b>
@@ -122,7 +122,6 @@ const Neighbourhood = () => {
                   console.log(select);
                 }}
                 style={dark ? { color: "white" } : { color: "black" }}
-                className="#AC1E23"
                 rows={rows}
                 columns={columns}
                 initialState={{
@@ -130,8 +129,11 @@ const Neighbourhood = () => {
                     paginationModel: { page: 0, pageSize: 5 },
                   },
                 }}
+                className="custom-datagrid"
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
+                rowHeight={38}
+                columnHeaderHeight={42}
               />
             </div>
           </AccordionDetails>

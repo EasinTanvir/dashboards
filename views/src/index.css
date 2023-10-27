@@ -45,11 +45,11 @@
 }
 
 .custom-datagrid .css-wop1k0-MuiDataGrid-footerContainer {
-  flex: 0 0 auto; /* Override the flex property to control height */
-  min-height: 35px; /* Adjust the height as needed */
-  height: 35px;
-  overflow: hidden; /* Also set the height to ensure it takes effect */
-  border: none;
+  flex: 0 0 auto !important; /* Override the flex property to control height */
+  min-height: 35px !important; /* Adjust the height as needed */
+  height: 35px !important;
+  overflow: hidden !important; /* Also set the height to ensure it takes effect */
+  border: none !important;
 
   /* Adjust the height as needed */
 }

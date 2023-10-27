@@ -100,7 +100,7 @@ const columns = [
 ];
 
 const CountryCity = () => {
-  const { dark, setDark } = themContext();
+  const { dark, setDark, isScreenSmall } = themContext();
   const [accordionOne, setAccordionOne] = useState(true);
 
   return (
@@ -129,7 +129,10 @@ const CountryCity = () => {
                 onRowSelectionModelChange={(select) => {
                   console.log(select);
                 }}
-                style={dark ? { color: "white" } : { color: "black" }}
+                style={{
+                  color: dark ? "white" : "black",
+                  fontSize: isScreenSmall ? "14px" : "12px",
+                }}
                 rows={rows}
                 columns={columns}
                 initialState={{

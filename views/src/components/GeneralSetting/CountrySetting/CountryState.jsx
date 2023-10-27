@@ -82,7 +82,7 @@ const columns = [
 ];
 
 const CountryState = () => {
-  const { dark, setDark } = themContext();
+  const { dark, setDark, isScreenSmall } = themContext();
   const [accordionOne, setAccordionOne] = useState(true);
 
   return (
@@ -91,11 +91,9 @@ const CountryState = () => {
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}
-            style={
-              dark
-                ? { backgroundColor: "#242530" }
-                : { backgroundColor: "white" }
-            }
+            style={{
+              color: dark ? "white" : "black",
+            }}
             expandIcon={<ExpandMoreIcon className="dark:text-white" />}
             aria-controls="panel1a-content"
             id="panel1a-header"
@@ -111,7 +109,10 @@ const CountryState = () => {
                 onRowSelectionModelChange={(select) => {
                   console.log(select);
                 }}
-                style={dark ? { color: "white" } : { color: "black" }}
+                style={{
+                  color: dark ? "white" : "black",
+                  fontSize: isScreenSmall ? "14px" : "12px",
+                }}
                 rows={rows}
                 columns={columns}
                 initialState={{

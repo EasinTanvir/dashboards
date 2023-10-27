@@ -20,7 +20,7 @@ import api from "../../../api";
 import { Circles } from "react-loader-spinner";
 
 const AllCountries = () => {
-  const { dark, setDark } = themContext();
+  const { dark, setDark, isScreenSmall } = themContext();
   const [accordionOne, setAccordionOne] = useState(true);
   const [accordionTwo, setAccordionTwo] = useState(true);
 
@@ -30,22 +30,6 @@ const AllCountries = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const opens = Boolean(anchorEl);
-
-  const [isScreenSmall, setIsScreenSmall] = useState(window.innerWidth < 600);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsScreenSmall(window.innerWidth < 600);
-    };
-
-    // Attach the event listener
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

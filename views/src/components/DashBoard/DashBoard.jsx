@@ -156,7 +156,7 @@ const DashBoard = () => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <div className="flex  items-center font-semibold sidebartext text-black dark:text-white ">
+                      <div className="flex   items-center font-semibold sidebartext text-black dark:text-white ">
                         <AdminPanelSettingsIcon
                           style={{ fontSize: "20px" }}
                           className="text-black dark:text-white  me-2 "
@@ -164,7 +164,7 @@ const DashBoard = () => {
                         Admin User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex  mb-2 ms-10 me-2 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode w-fit  dark:bg-deepBlack   flex  mb-2 ms-10 me-2 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
@@ -249,7 +249,7 @@ const DashBoard = () => {
                         Website User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack  me-2 flex   mb-2 ms-10 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode w-fit dark:bg-deepBlack  me-2 flex   mb-2 ms-10 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
@@ -344,7 +344,7 @@ const DashBoard = () => {
                         Page Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-9 -mt-3 rounded-md">
+                    <AccordionDetails className="bg-lightMode me-2 w-fit dark:bg-deepBlack  flex   mb-2 ms-9 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
@@ -404,7 +404,7 @@ const DashBoard = () => {
                         General Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-9 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode w-fit me-2 dark:bg-deepBlack  flex   mb-2 ms-9 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={

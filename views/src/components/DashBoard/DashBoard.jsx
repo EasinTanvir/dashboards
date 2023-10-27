@@ -28,15 +28,19 @@ import FlagIcon from "@mui/icons-material/Flag";
 
 const DashBoard = () => {
   const [isScreenSmall, setIsScreenSmall] = useState(window.innerWidth < 600);
-
+  console.log(isScreenSmall);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setIsScreenSmall(window.innerWidth < 600);
-      setSidebarOpen(false);
     };
 
+    if (isScreenSmall) {
+      setSidebarOpen(false);
+    } else {
+      setSidebarOpen(true);
+    }
     // Attach the event listener
     window.addEventListener("resize", handleResize);
 
@@ -44,7 +48,7 @@ const DashBoard = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isScreenSmall]);
 
   return (
     <div className="relative">
@@ -61,7 +65,7 @@ const DashBoard = () => {
               sidebarOpen ? "gap-0" : "gap-1"
             } px-2 `}
           >
-            <div className="flex items-center ps-3  gap-4">
+            <div className="flex items-center ps-3  gap-4 ">
               <div>
                 <img
                   className="object-cover w-8"
@@ -92,10 +96,10 @@ const DashBoard = () => {
                   onClick={() => setSidebarOpen(true)}
                   className="flex flex-col gap-1"
                 >
-                  <span className="text-sm text-black dark:text-white sidebartext">
+                  <span className="text-sm text-black dark:text-white sidebartext ms-1">
                     Expand
                   </span>
-                  <ArrowRightAltIcon className="text-black dark:text-white" />
+                  <ArrowRightAltIcon className="text-black dark:text-white ms-1 -mt-1" />
                 </button>
               </div>
             )}
@@ -160,13 +164,13 @@ const DashBoard = () => {
                         Admin User
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex   mb-2 ms-10 me-2 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode dark:bg-deepBlack   flex  mb-2 ms-10 me-2 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/new-admin">New Admin</Link>
@@ -175,16 +179,16 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
-                          <SupervisorAccountIcon style={{ fontSize: "18px" }} />
+                          <SupervisorAccountIcon style={{ fontSize: "20px" }} />
                           <Link to="/admin">Admin</Link>
                         </li>
                         <li
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
                           <AddModeratorIcon style={{ fontSize: "18px" }} />
                           <Link to="/admin-role">Admin Role</Link>
@@ -193,7 +197,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/co-admin">Co Admin</Link>
@@ -251,7 +255,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
                           <PersonAddIcon style={{ fontSize: "18px" }} />
                           <Link to="/user">All User</Link>
@@ -340,13 +344,13 @@ const DashBoard = () => {
                         Page Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-3 rounded-md">
+                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-9 -mt-3 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2"
+                          className="dark:hover:bg-gray-500  sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2"
                         >
                           <ArticleIcon
                             style={{ fontSize: "22px" }}
@@ -400,13 +404,13 @@ const DashBoard = () => {
                         General Setting
                       </div>
                     </AccordionSummary>
-                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-10 -mt-4 rounded-md">
+                    <AccordionDetails className="bg-lightMode me-2 dark:bg-deepBlack  flex   mb-2 ms-9 -mt-4 rounded-md">
                       <ul className="flex flex-col gap-3 text-black dark:text-white">
                         <li
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center text-sm gap-2"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center text-sm gap-2"
                         >
                           <LanguageIcon style={{ fontSize: "18px" }} />
                           <Link to="/site-setting">Site Setting</Link>
@@ -415,7 +419,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <WebIcon style={{ fontSize: "18px" }} />
                           <Link to="/thirdparty-setting">Third Party</Link>
@@ -424,7 +428,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <DonutSmallIcon style={{ fontSize: "18px" }} />
                           <Link to="/smtp-setting">SMTP Setting</Link>
@@ -433,7 +437,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <EmailIcon style={{ fontSize: "18px" }} />
                           <Link to="/email-setting">Email Setting</Link>
@@ -442,7 +446,7 @@ const DashBoard = () => {
                           onClick={
                             isScreenSmall && (() => setSidebarOpen(false))
                           }
-                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 px-4 rounded py-1 flex items-center gap-2 text-sm"
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
                         >
                           <FlagIcon style={{ fontSize: "18px" }} />
                           <Link to="/country-setting">Country Setting</Link>

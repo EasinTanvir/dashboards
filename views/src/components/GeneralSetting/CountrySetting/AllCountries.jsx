@@ -119,7 +119,7 @@ const AllCountries = () => {
       sortable: false,
 
       maxWidth: 10,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <b style={{ fontSize: "14px", fontWeight: 900 }}>ID</b>
       ),
@@ -129,7 +129,7 @@ const AllCountries = () => {
       sortable: false,
       width: 120,
 
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country Name">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
@@ -140,7 +140,8 @@ const AllCountries = () => {
       field: "countryCode",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white text-center border",
+      cellClassName:
+        "text-black dark:text-white text-center border border-t-0 border-r-0",
 
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country 2-Letter Code">
@@ -153,7 +154,7 @@ const AllCountries = () => {
       headerName: "Currency Code",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Currency Code">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Currency Code</b>
@@ -165,7 +166,7 @@ const AllCountries = () => {
       headerName: "Phone Code",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Phone Code">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Phone Code</b>
@@ -177,7 +178,7 @@ const AllCountries = () => {
       headerName: "Sate",
       sortable: false,
       width: 90,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="State">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
@@ -189,7 +190,7 @@ const AllCountries = () => {
       headerName: "City",
       sortable: false,
       width: 95,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       headerclassname: "bold-header",
       renderHeader: (params) => (
         <Tooltip placement="top" title="City">
@@ -202,7 +203,7 @@ const AllCountries = () => {
       type: "button",
       sortable: false,
       width: 90,
-      cellClassName: "text-black dark:text-white border",
+      cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Action</b>
       ),

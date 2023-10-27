@@ -33,7 +33,7 @@ const columns = [
     field: "id",
     sortable: false,
     width: 70,
-    cellClassName: "text-black dark:text-white border",
+    cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="ID">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
@@ -49,7 +49,7 @@ const columns = [
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
       </Tooltip>
     ),
-    cellClassName: "text-black dark:text-white border",
+    cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
   },
 
   {
@@ -57,7 +57,7 @@ const columns = [
     sortable: false,
 
     width: 80,
-    cellClassName: "text-black dark:text-white border",
+    cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="State">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
@@ -69,7 +69,7 @@ const columns = [
     sortable: false,
 
     width: 80,
-    cellClassName: "text-black dark:text-white border",
+    cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="City">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
@@ -82,7 +82,7 @@ const columns = [
     sortable: false,
 
     width: 120,
-    cellClassName: "text-black dark:text-white border",
+    cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="Neighbourhood">
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Neighbourhood</b>

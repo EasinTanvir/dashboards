@@ -95,7 +95,7 @@ const AddNewCountry = () => {
                         <input
                           required
                           className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                          type="text"
+                          type="number"
                           name=""
                           id=""
                           placeholder=" Phone Code"

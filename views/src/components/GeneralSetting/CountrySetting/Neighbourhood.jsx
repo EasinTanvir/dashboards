@@ -111,7 +111,7 @@ const Neighbourhood = () => {
             id="panel1a-header"
           >
             <button className="dark:text-white text-black font-bold text-md">
-              Show Countries, State and Neighbourhood
+              Show Countries State and Neighbourhood
             </button>
           </AccordionSummary>
           <AccordionDetails className="dark:bg-gray-700">

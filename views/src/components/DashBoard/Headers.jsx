@@ -16,8 +16,8 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
   return (
     <>
       <header className="h-12  flex items-center sticky top-0 z-10 headers dark:bg-headerBg bg-white">
-        <div className="container  mx-auto flex justify-between  ">
-          <div className="mx-4 flex gap-2 items-center">
+        <div className="container  mx-auto flex   ">
+          <div className="mx-4 flex gap-4 items-center">
             <div className="mobile-icon ms-4">
               <button onClick={() => setSidebarOpen(!sidebarOpen)}>
                 {sidebarOpen ? (
@@ -29,7 +29,7 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
             </div>
           </div>
           <div className="right">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-4 items-center">
               <div>
                 <img
                   className="rounded-full w-6 ring-1 ring-green-800"

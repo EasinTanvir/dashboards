@@ -27,13 +27,14 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import FlagIcon from "@mui/icons-material/Flag";
 
 const DashBoard = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-
   const [isScreenSmall, setIsScreenSmall] = useState(window.innerWidth < 600);
+
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setIsScreenSmall(window.innerWidth < 600);
+      setSidebarOpen(false);
     };
 
     // Attach the event listener

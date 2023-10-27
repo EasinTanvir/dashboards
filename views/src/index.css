@@ -44,10 +44,12 @@
   outline: none !important;
 }
 
-/* MyDataGrid.css */
-.custom-row-class {
-  background-color: #e9ecef;
-  /* Add any other CSS styles you want to apply to these rows */
+.custom-datagrid .css-wop1k0-MuiDataGrid-footerContainer {
+  flex: 0 0 auto; /* Override the flex property to control height */
+  min-height: 35px; /* Adjust the height as needed */
+  height: 35px; /* Also set the height to ensure it takes effect */
+
+  /* Adjust the height as needed */
 }
 
 @media screen and (max-width: 1100px) {

@@ -56,78 +56,59 @@ const AllCountries = () => {
       countryCode: "BD",
       currencyCode: "BDT",
       phnCode: "+88",
-      state: "Uttara",
+      state: "Chittangong",
       city: "Dhaka",
       action: "Action",
     },
     {
       id: 2,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
+      countryName: "United States",
+      countryCode: "US",
+      currencyCode: "USD",
+      phnCode: "+1",
+      state: "New York",
+      city: "New York",
       action: "Action",
     },
     {
       id: 3,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
-      action: "Action",
-    },
-    {
-      id: 4,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
-      action: "Action",
-    },
-    {
-      id: 5,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
+      countryName: "Canada",
+      countryCode: "CA",
+      currencyCode: "CAD",
+      phnCode: "+1",
+      state: " Ontario",
+      city: "Toronto",
       action: "Action",
     },
     {
       id: 6,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
+      countryName: "Brazil",
+      countryCode: " BR",
+      currencyCode: " BRL",
       phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
+      state: " Rio de Janeiro",
+      city: " Rio de Janeiro",
       action: "Action",
     },
     {
-      id: 7,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
+      id: 4,
+      countryName: "India",
+      countryCode: "IN",
+      currencyCode: "INR",
+      phnCode: " +91",
+      state: "Maharashtra",
+      city: "Mumbai",
       action: "Action",
     },
+
     {
-      id: 8,
-      countryName: "Bangladesh",
-      countryCode: "BD",
-      currencyCode: "BDT",
-      phnCode: "+88",
-      state: "Uttara",
-      city: "Dhaka",
+      id: 5,
+      countryName: "United Kingdom",
+      countryCode: "GB",
+      currencyCode: " GBP",
+      phnCode: "+44",
+      state: "Londo",
+      city: "Londo",
       action: "Action",
     },
   ];
@@ -136,8 +117,9 @@ const AllCountries = () => {
       field: "id",
       headerName: "ID",
       sortable: false,
+
       maxWidth: 10,
-      cellClassName: "text-black dark:text-white ",
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <b style={{ fontSize: "14px", fontWeight: 900 }}>ID</b>
       ),
@@ -146,7 +128,8 @@ const AllCountries = () => {
       field: "countryName",
       sortable: false,
       width: 120,
-      cellClassName: "text-black dark:text-white border border-black",
+
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country Name">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
@@ -157,7 +140,7 @@ const AllCountries = () => {
       field: "countryCode",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white text-center ",
+      cellClassName: "text-black dark:text-white text-center border",
 
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country 2-Letter Code">
@@ -170,7 +153,7 @@ const AllCountries = () => {
       headerName: "Currency Code",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white",
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Currency Code">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Currency Code</b>
@@ -182,7 +165,7 @@ const AllCountries = () => {
       headerName: "Phone Code",
       width: 60,
       sortable: false,
-      cellClassName: "text-black dark:text-white",
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Phone Code">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>Phone Code</b>
@@ -194,7 +177,7 @@ const AllCountries = () => {
       headerName: "Sate",
       sortable: false,
       width: 90,
-      cellClassName: "text-black dark:text-white border-none outline-none",
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <Tooltip placement="top" title="State">
           <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
@@ -205,8 +188,8 @@ const AllCountries = () => {
       field: "city",
       headerName: "City",
       sortable: false,
-      width: 90,
-      cellClassName: "text-black dark:text-white",
+      width: 95,
+      cellClassName: "text-black dark:text-white border",
       headerclassname: "bold-header",
       renderHeader: (params) => (
         <Tooltip placement="top" title="City">
@@ -219,7 +202,7 @@ const AllCountries = () => {
       type: "button",
       sortable: false,
       width: 90,
-      cellClassName: "text-black dark:text-white",
+      cellClassName: "text-black dark:text-white border",
       renderHeader: (params) => (
         <b style={{ fontSize: "14px", fontWeight: 900 }}>Action</b>
       ),
@@ -319,7 +302,6 @@ const AllCountries = () => {
                   style={{
                     color: dark ? "white" : "black",
                   }}
-                  className="#AC1E23"
                   rows={rows}
                   columns={columns}
                   initialState={{
@@ -327,9 +309,11 @@ const AllCountries = () => {
                       paginationModel: { page: 0, pageSize: 5 },
                     },
                   }}
+                  className="custom-datagrid"
                   pageSizeOptions={[5, 10]}
                   checkboxSelection
-                  getRowClassName={getRowClassName}
+                  rowHeight={38}
+                  columnHeaderHeight={42}
                 />
               </div>
             </AccordionDetails>

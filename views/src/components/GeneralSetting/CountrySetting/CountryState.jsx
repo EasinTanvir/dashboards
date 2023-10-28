@@ -123,7 +123,7 @@ const CountryState = () => {
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
                 className="custom-datagrid"
-                rowHeight={38}
+                rowHeight={32}
                 columnHeaderHeight={42}
               />
             </div>

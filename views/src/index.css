@@ -54,6 +54,12 @@
   /* Adjust the height as needed */
 }
 
+.custom-datagrid .MuiDataGrid-cell {
+  padding-left: 2px !important; /* Adjust the padding as needed */
+  /* Adjust the padding as needed */
+  text-align: left !important;
+}
+
 @media screen and (max-width: 1100px) {
   .dashboard-sidebar-left {
     width: 0px;

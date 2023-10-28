@@ -73,13 +73,12 @@ const DashBoard = () => {
                   alt=""
                 />
               </div>
-              {sidebarOpen && (
-                <div>
-                  <h3 className="dark:text-white text-black font-bold text-md d">
-                    MEGA
-                  </h3>
-                </div>
-              )}
+
+              <div className={`${!sidebarOpen ? "hidden" : ""}`}>
+                <h3 className="dark:text-white text-black font-bold text-md ">
+                  MEGA
+                </h3>
+              </div>
             </div>
             {sidebarOpen ? (
               <div className="text-end  w-full">
@@ -136,7 +135,7 @@ const DashBoard = () => {
               )}
 
               {sidebarOpen && (
-                <div className="  -ms-4">
+                <div className="  -ms-4 ">
                   <Accordion
                     style={{
                       backgroundColor: "transparent",
@@ -279,7 +278,9 @@ const DashBoard = () => {
                   />
                 </button>
                 {sidebarOpen && (
-                  <span className="text-black dark:text-white font-semibold sidebartext mt-1    ">
+                  <span
+                    className={` text-black  dark:text-white font-semibold sidebartext mt-1    `}
+                  >
                     Advertisement Managment
                   </span>
                 )}

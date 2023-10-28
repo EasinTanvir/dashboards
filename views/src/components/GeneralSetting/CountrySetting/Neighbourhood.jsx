@@ -135,7 +135,7 @@ const Neighbourhood = () => {
                 className="custom-datagrid"
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
-                rowHeight={38}
+                rowHeight={32}
                 columnHeaderHeight={42}
               />
             </div>

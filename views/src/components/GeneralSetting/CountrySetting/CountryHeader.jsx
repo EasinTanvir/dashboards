@@ -11,15 +11,15 @@ const CountryHeader = () => {
   const [select, setSelect] = useState(1);
 
   return (
-    <div className=" my-1 lg:max-w-[66%] w-full font-myfont ">
+    <div className=" my-1 lg:max-w-[68%] w-full font-myfont ">
       <div className="flex sm:justify-start ">
         <ul className="flex  w-full lg:justify-between justify-start  flex-wrap lg:gap-2 gap-0    bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
           <Link to="">
             <li
               onClick={() => setSelect(1)}
-              className={`hover:bg-redColor ${
+              className={` ${
                 select === 1 ? "bg-redColor text-white" : ""
-              } hover:text-white  duration-500 transition rounded px-3 py-3 `}
+              }  duration-100 transition rounded lg:px-8 border px-3 py-3 `}
             >
               <div className="flex gap-1 items-center ">
                 <LanguageIcon style={{ fontSize: "18px" }} />
@@ -33,9 +33,9 @@ const CountryHeader = () => {
           <Link to="states">
             <li
               onClick={() => setSelect(3)}
-              className={`hover:bg-redColor ${
+              className={` ${
                 select === 3 ? "bg-redColor text-white" : ""
-              } hover:text-white duration-500 transition rounded px-3 py-3 `}
+              }  duration-100 transition rounded lg:px-8 px-3 py-3 `}
             >
               <div className="flex gap-1 items-center">
                 <HomeIcon style={{ fontSize: "18px" }} />
@@ -49,9 +49,9 @@ const CountryHeader = () => {
           <Link to="cities">
             <li
               onClick={() => setSelect(2)}
-              className={`hover:bg-redColor ${
+              className={` ${
                 select === 2 ? "bg-redColor text-white" : ""
-              } hover:text-white duration-500 transition rounded px-3 py-3 `}
+              }  duration-100 transition rounded lg:px-8 px-3 py-3 `}
             >
               <div className="flex gap-1 items-center">
                 <LocationCityIcon style={{ fontSize: "18px" }} />
@@ -65,9 +65,9 @@ const CountryHeader = () => {
           <Link to="neighbourhood">
             <li
               onClick={() => setSelect(4)}
-              className={`hover:bg-redColor ${
+              className={` ${
                 select === 4 ? "bg-redColor text-white" : ""
-              } hover:text-white duration-500 transition rounded px-3 py-2 `}
+              }  duration-100 transition rounded lg:px-8 px-3 py-2 `}
             >
               <div className="flex gap-1 items-center"></div>
               <GroupIcon style={{ fontSize: "18px" }} />

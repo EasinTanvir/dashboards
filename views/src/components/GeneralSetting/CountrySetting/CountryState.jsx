@@ -89,7 +89,7 @@ const CountryState = () => {
 
   return (
     <div className="flex gap-3 mt-2  md:flex-row flex-col">
-      <div className="country-left   w-[100%]  ">
+      <div className="country-left   sm:w-[68%] w-full  ">
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}

@@ -288,7 +288,7 @@ const AllCountries = () => {
   return (
     <div className="overflow-hidden mt-2 ">
       <div className="country flex lg:flex-row flex-col  gap-2 ">
-        <div className="country-left lg:w-[65%] xl:w-fit   ">
+        <div className="country-left lg:w-[68%]    ">
           <Accordion expanded={accordionOne}>
             <AccordionSummary
               onClick={() => setAccordionOne(!accordionOne)}

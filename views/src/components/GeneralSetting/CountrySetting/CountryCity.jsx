@@ -108,7 +108,7 @@ const CountryCity = () => {
 
   return (
     <div className="flex md:flex-row flex-col gap-2">
-      <div className="country-left  sm:w-[66%] w-full  ">
+      <div className="country-left  sm:w-[71%] w-full  ">
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}

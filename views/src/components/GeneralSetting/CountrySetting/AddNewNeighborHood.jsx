@@ -6,9 +6,35 @@ import Typography from "@mui/material/Typography";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { themContext } from "../../../context/themeContext";
+
+import Autocomplete from "@mui/material/Autocomplete";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { createTheme } from "@mui/material";
+
 const AddNewNeighborHood = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
+
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
+  });
+  const largeScreen = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const top100Films = [
+    { label: "Bangladesh" },
+    { label: "India" },
+    { label: "Singapour" },
+    { label: "Pakistan" },
+    { label: "London" },
+  ];
   return (
     <div className="country-right   sm:w-fit  w-full  ">
       <Accordion expanded={accordionTwo}>
@@ -22,7 +48,7 @@ const AddNewNeighborHood = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold text-md">
+            <span className="text-black font-myfont dark:text-white font-bold text-md">
               Add New Neighbourhood
             </span>
           </Typography>
@@ -35,70 +61,81 @@ const AddNewNeighborHood = () => {
                   <div className="flex flex-col  gap-2">
                     <div className="flex sm:flex-row flex-col gap-1 ">
                       <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-sm text-black font-semibold"
-                          htmlFor=""
-                        >
-                          City
+                        <label className="flex flex-col">
+                          <b style={{ fontSize: "13px", fontWeight: 900 }}>
+                            Country Name
+                          </b>
+                          <Autocomplete
+                            sx={{
+                              display: "inline-block",
+                              "& input": {
+                                border: "gray",
+                                borderWidth: "1px",
+                                width: largeScreen ? 140 : "100%",
+                                borderStyle: "solid",
+                                borderRadius: "5px",
+                                padding: "4px",
+                                outline: "none",
+                              },
+                            }}
+                            openOnFocus={false}
+                            onMouseDownCapture={(e) => e.stopPropagation()}
+                            clearOnBlur={true}
+                            id="custom-input-demo"
+                            options={top100Films}
+                            renderInput={(params) => (
+                              <div ref={params.InputProps.ref}>
+                                <input
+                                  placeholder="Country Name"
+                                  autoComplete="off"
+                                  type="text"
+                                  {...params.inputProps}
+                                />
+                              </div>
+                            )}
+                          />
                         </label>
-                        <input
-                          required
-                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                          type="text"
-                          name=""
-                          id=""
-                          placeholder="Country Name"
-                        />
                       </div>
                       <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-sm text-black font-semibold"
-                          htmlFor=""
-                        >
-                          City
-                        </label>
+                        <b style={{ fontSize: "13px", fontWeight: 900 }}>
+                          State
+                        </b>
                         <input
                           required
-                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-36 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder="Country Name"
+                          placeholder="State"
                         />
                       </div>
                     </div>
 
                     <div className="flex sm:flex-row flex-col  gap-1">
                       <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-sm text-black font-semibold"
-                          htmlFor=""
-                        >
+                        <b style={{ fontSize: "13px", fontWeight: 900 }}>
                           City
-                        </label>
+                        </b>
                         <input
                           required
-                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-36 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder="Country Name"
+                          placeholder="City"
                         />
                       </div>{" "}
                       <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-sm text-black font-semibold"
-                          htmlFor=""
-                        >
-                          City
-                        </label>
+                        <b style={{ fontSize: "13px", fontWeight: 900 }}>
+                          Neighbourhood
+                        </b>
                         <input
                           required
-                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-36 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder="Country Name"
+                          placeholder="Neighbourhood"
                         />
                       </div>
                     </div>

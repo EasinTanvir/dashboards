@@ -11,19 +11,21 @@ const CountryHeader = () => {
   const [select, setSelect] = useState(1);
 
   return (
-    <div className=" my-1 ">
-      <div className="flex justify-start">
-        <ul className="flex sm:flex-row flex-wrap gap-2   min-w-fit bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
+    <div className=" my-1 lg:max-w-[66%] w-full font-myfont ">
+      <div className="flex sm:justify-start ">
+        <ul className="flex  w-full lg:justify-between justify-start  flex-wrap lg:gap-2 gap-0    bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
           <Link to="">
             <li
               onClick={() => setSelect(1)}
               className={`hover:bg-redColor ${
                 select === 1 ? "bg-redColor text-white" : ""
-              } hover:text-white  duration-500 transition rounded px-2 py-3 `}
+              } hover:text-white  duration-500 transition rounded px-3 py-3 `}
             >
-              <div className="flex gap-1 items-center">
+              <div className="flex gap-1 items-center ">
                 <LanguageIcon style={{ fontSize: "18px" }} />
-                <span className="text-sm font-semibold">Country</span>
+                <span className="md:text-sm text-customSize font-semibold">
+                  Country
+                </span>
               </div>
             </li>
           </Link>
@@ -37,7 +39,9 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center">
                 <HomeIcon style={{ fontSize: "18px" }} />
-                <span className="text-sm font-semibold">States</span>
+                <span className="md:text-sm text-customSize font-semibold">
+                  States
+                </span>
               </div>
             </li>
           </Link>
@@ -51,7 +55,9 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center">
                 <LocationCityIcon style={{ fontSize: "18px" }} />
-                <span className="text-sm font-semibold">Cities</span>
+                <span className="md:text-sm text-customSize font-semibold">
+                  Cities
+                </span>
               </div>
             </li>
           </Link>
@@ -65,7 +71,9 @@ const CountryHeader = () => {
             >
               <div className="flex gap-1 items-center"></div>
               <GroupIcon style={{ fontSize: "18px" }} />
-              <span className="text-sm font-semibold ms-1">Neighbourhoods</span>
+              <span className="md:text-sm text-customSize font-semibold ms-1">
+                Neighbourhoods
+              </span>
             </li>
           </Link>
         </ul>

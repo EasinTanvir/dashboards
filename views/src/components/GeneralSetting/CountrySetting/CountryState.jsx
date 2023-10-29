@@ -49,19 +49,21 @@ const columns = [
     sortable: false,
     width: 70,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
+    headerClassName: "border border-black",
     renderHeader: (params) => (
       <Tooltip placement="top" title="ID">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Id</b>
       </Tooltip>
     ),
   },
   {
     field: "countryName",
-    width: 130,
+    width: 200,
     sortable: false,
+    headerClassName: "border border-black",
     renderHeader: (params) => (
       <Tooltip placement="top" title="Country Name">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Country Name</b>
       </Tooltip>
     ),
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
@@ -71,11 +73,11 @@ const columns = [
     field: "state",
     sortable: false,
 
-    width: 80,
+    width: 200,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="State">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>State</b>
       </Tooltip>
     ),
   },
@@ -86,8 +88,8 @@ const CountryState = () => {
   const [accordionOne, setAccordionOne] = useState(true);
 
   return (
-    <div className="flex gap-3  md:flex-row flex-col">
-      <div className="country-left  md:w-fit w-[100%]  ">
+    <div className="flex gap-3 mt-2  md:flex-row flex-col">
+      <div className="country-left   w-[100%]  ">
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}
@@ -98,7 +100,7 @@ const CountryState = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <button className="dark:text-white text-black font-bold text-md">
+            <button className="dark:text-white text-black font-bold text-md font-myfont ">
               Show Countries And State
             </button>
           </AccordionSummary>

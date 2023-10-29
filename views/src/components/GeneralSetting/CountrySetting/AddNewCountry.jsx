@@ -10,7 +10,7 @@ const AddNewCountry = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div className="country-right    sm:w-fit  mt-3">
+    <div className="country-right    sm:w-fit   ">
       {" "}
       <Accordion expanded={accordionTwo}>
         <AccordionSummary
@@ -37,14 +37,14 @@ const AddNewCountry = () => {
                     <div className="flex sm:flex-row flex-col gap-2">
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white  text-black font-semibold"
                           htmlFor=""
                         >
                           Country Name
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="dark:text-white text-sm sm:w-36 text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
@@ -60,57 +60,62 @@ const AddNewCountry = () => {
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="dark:text-white sm:w-36 text-sm text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
                           placeholder="Country Code"
                         />
                       </div>
+                    </div>
+
+                    <div className="flex sm:flex-row flex-col gap-2">
+                      {" "}
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white sm:w-36 text-black font-semibold"
                           htmlFor=""
                         >
                           Currency Code
                         </label>
                         <input
                           required
-                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-36 text-sm dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
                           placeholder="Currency Code"
                         />
                       </div>
-                    </div>
-                    <div className="flex gap-2 sm:flex-row flex-col">
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white sm:w-36 text-black font-semibold"
                           htmlFor=""
                         >
                           Phone Code
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="dark:text-white text-sm sm:w-36 text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="number"
                           name=""
                           id=""
                           placeholder=" Phone Code"
                         />
                       </div>
+                    </div>
+
+                    <div className="flex gap-2 sm:flex-row flex-col">
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white text-sm text-black font-semibold"
                           htmlFor=""
                         >
                           State
                         </label>
                         <input
                           required
-                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-36 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
@@ -126,7 +131,7 @@ const AddNewCountry = () => {
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="dark:text-white text-sm sm:w-36 text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
@@ -135,12 +140,18 @@ const AddNewCountry = () => {
                       </div>
                     </div>
                   </div>
-                  <div className=" gap-2 mt-4 mb-4">
+                  <div className=" gap-2 mt-4 mb-4 flex justify-around">
                     <button
-                      className="btn rounded-md bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                       type="submit"
                     >
-                      Add New Country
+                      save
+                    </button>{" "}
+                    <button
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      type="submit"
+                    >
+                      Reset
                     </button>
                   </div>
                 </form>

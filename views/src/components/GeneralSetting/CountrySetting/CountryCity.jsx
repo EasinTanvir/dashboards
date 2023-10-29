@@ -52,22 +52,24 @@ const rows = [
 const columns = [
   {
     field: "id",
+    headerClassName: "border border-black",
     width: 70,
     sortable: false,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="ID">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Id</b>
       </Tooltip>
     ),
   },
   {
     field: "countryName",
-    width: 130,
+    headerClassName: "border border-black",
+    width: 180,
     sortable: false,
     renderHeader: (params) => (
       <Tooltip placement="top" title="Country Name">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Country Name</b>
       </Tooltip>
     ),
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
@@ -76,12 +78,13 @@ const columns = [
   {
     field: "state",
     sortable: false,
+    headerClassName: "border border-black",
 
-    width: 80,
+    width: 180,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="State">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>State</b>
       </Tooltip>
     ),
   },
@@ -89,11 +92,11 @@ const columns = [
     field: "city",
     sortable: false,
 
-    width: 80,
+    width: 180,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="City">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>City</b>
       </Tooltip>
     ),
   },
@@ -105,7 +108,7 @@ const CountryCity = () => {
 
   return (
     <div className="flex md:flex-row flex-col gap-2">
-      <div className="country-left  md:w-fit w-[100%]  ">
+      <div className="country-left  sm:w-[66%] w-full  ">
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}
@@ -118,7 +121,7 @@ const CountryCity = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <button className="dark:text-white text-black font-bold text-md">
+            <button className="dark:text-white text-black font-myfont font-bold text-md">
               Show State And State
             </button>
           </AccordionSummary>

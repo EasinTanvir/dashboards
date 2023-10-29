@@ -32,21 +32,23 @@ const columns = [
   {
     field: "id",
     sortable: false,
+    headerClassName: "border border-black",
     width: 70,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="ID">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Id</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Id</b>
       </Tooltip>
     ),
   },
   {
     field: "countryName",
+    headerClassName: "border border-black",
     sortable: false,
     width: 130,
     renderHeader: (params) => (
       <Tooltip placement="top" title="Country Name">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Country Name</b>
       </Tooltip>
     ),
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
@@ -56,36 +58,38 @@ const columns = [
     field: "state",
     sortable: false,
 
-    width: 80,
+    width: 130,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="State">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>State</b>
       </Tooltip>
     ),
   },
   {
     field: "city",
     sortable: false,
+    headerClassName: "border border-black",
 
-    width: 80,
+    width: 130,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="City">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>City</b>
       </Tooltip>
     ),
   },
 
   {
     field: "neighbourhood",
+    headerClassName: "border border-black",
     sortable: false,
 
-    width: 120,
+    width: 130,
     cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
     renderHeader: (params) => (
       <Tooltip placement="top" title="Neighbourhood">
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Neighbourhood</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Neighbourhood</b>
       </Tooltip>
     ),
   },
@@ -97,7 +101,7 @@ const Neighbourhood = () => {
 
   return (
     <div className="flex lg:flex-row flex-col gap-2">
-      <div className="country-left  md:w-fit w-[100%]  ">
+      <div className="country-left   w-[100%]  ">
         <Accordion expanded={accordionOne}>
           <AccordionSummary
             onClick={() => setAccordionOne(!accordionOne)}
@@ -110,7 +114,7 @@ const Neighbourhood = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <button className="dark:text-white text-black font-bold text-md">
+            <button className="dark:text-white font-myfont text-black font-bold text-md">
               Show Countries State and Neighbourhood
             </button>
           </AccordionSummary>

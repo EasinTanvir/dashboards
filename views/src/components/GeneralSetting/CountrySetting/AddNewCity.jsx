@@ -10,7 +10,7 @@ const AddNewCity = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div className="country-right   w-fit overflow-auto  ">
+    <div className="country-right   sm:w-fit w-full overflow-auto  ">
       <Accordion expanded={accordionTwo}>
         <AccordionSummary
           onClick={() => setAccordionTwo(!accordionTwo)}
@@ -32,64 +32,70 @@ const AddNewCity = () => {
             <form>
               <div className="mt-4">
                 <form>
-                  <div className="flex  flex-col  gap-2">
-                    <div className="flex gap-2">
-                      <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-black font-semibold"
-                          htmlFor=""
-                        >
-                          Country Name
-                        </label>
-                        <input
-                          required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                          type="text"
-                          name=""
-                          id=""
-                          placeholder="Country Name"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-0">
-                        <label
-                          className="dark:text-white text-black font-semibold"
-                          htmlFor=""
-                        >
-                          State
-                        </label>
-                        <input
-                          required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                          type="text"
-                          name=""
-                          id=""
-                          placeholder=" State"
-                        />
-                      </div>
-                    </div>
+                  <div className="flex sm:flex-row flex-col    gap-2">
                     <div className="flex flex-col gap-0">
                       <label
-                        className="dark:text-white text-black font-semibold"
+                        className="dark:text-white text-sm text-black font-semibold"
                         htmlFor=""
                       >
-                        City
+                        Country Name
                       </label>
                       <input
                         required
-                        className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                        className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name=""
                         id=""
-                        placeholder="City"
+                        placeholder="Country Name"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-0">
+                      <label
+                        className="dark:text-white text-sm text-black font-semibold"
+                        htmlFor=""
+                      >
+                        State
+                      </label>
+                      <input
+                        required
+                        className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Country Name"
                       />
                     </div>
                   </div>
-                  <div className=" gap-2 mt-4 mb-4">
+
+                  <div className="flex flex-col gap-0 mt-2">
+                    <label
+                      className="dark:text-white text-sm text-black font-semibold"
+                      htmlFor=""
+                    >
+                      City
+                    </label>
+                    <input
+                      required
+                      className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="Country Name"
+                    />
+                  </div>
+
+                  <div className=" gap-2 mt-4 mb-4 flex justify-around">
                     <button
-                      className="btn rounded-md bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                       type="submit"
                     >
-                      Add New City
+                      save
+                    </button>{" "}
+                    <button
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      type="submit"
+                    >
+                      Reset
                     </button>
                   </div>
                 </form>

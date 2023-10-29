@@ -10,7 +10,7 @@ const AddNewNeighborHood = () => {
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
   return (
-    <div className="country-right   w-fit   ">
+    <div className="country-right   sm:w-fit  w-full  ">
       <Accordion expanded={accordionTwo}>
         <AccordionSummary
           onClick={() => setAccordionTwo(!accordionTwo)}
@@ -29,21 +29,21 @@ const AddNewNeighborHood = () => {
         </AccordionSummary>
         <AccordionDetails className="dark:bg-gray-700">
           <div className="relative overflow-x-auto  sm:rounded-lg">
-            <form>
+            <form className="">
               <div className="mt-4">
                 <form>
                   <div className="flex flex-col  gap-2">
-                    <div className="flex sm:flex-row flex-col gap-1">
+                    <div className="flex sm:flex-row flex-col gap-1 ">
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white text-sm text-black font-semibold"
                           htmlFor=""
                         >
-                          Country Name
+                          City
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
@@ -52,18 +52,18 @@ const AddNewNeighborHood = () => {
                       </div>
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white text-sm text-black font-semibold"
                           htmlFor=""
                         >
-                          State
+                          City
                         </label>
                         <input
                           required
-                          className="text-black dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder=" State"
+                          placeholder="Country Name"
                         />
                       </div>
                     </div>
@@ -71,44 +71,50 @@ const AddNewNeighborHood = () => {
                     <div className="flex sm:flex-row flex-col  gap-1">
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white text-sm text-black font-semibold"
                           htmlFor=""
                         >
                           City
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder="City"
+                          placeholder="Country Name"
                         />
-                      </div>
+                      </div>{" "}
                       <div className="flex flex-col gap-0">
                         <label
-                          className="dark:text-white text-black font-semibold"
+                          className="dark:text-white text-sm text-black font-semibold"
                           htmlFor=""
                         >
-                          Neighbourhood
+                          City
                         </label>
                         <input
                           required
-                          className="dark:text-white text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
+                          className="text-black sm:w-40 dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                           type="text"
                           name=""
                           id=""
-                          placeholder="Neighbourhood"
+                          placeholder="Country Name"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className=" gap-2 mt-4 mb-4">
+                  <div className=" gap-2 mt-4 mb-4 flex justify-around">
                     <button
-                      className="btn rounded-md bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                       type="submit"
                     >
-                      Add New Neighbourhood
+                      save
+                    </button>{" "}
+                    <button
+                      className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
+                      type="submit"
+                    >
+                      Reset
                     </button>
                   </div>
                 </form>

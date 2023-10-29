@@ -118,11 +118,12 @@ const AllCountries = () => {
       field: "id",
       headerName: "ID",
       sortable: false,
+      headerClassName: "border border-black",
 
       maxWidth: 10,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>ID</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>ID</b>
       ),
     },
     {
@@ -133,7 +134,7 @@ const AllCountries = () => {
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country Name">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Name</b>
+          <b style={{ fontSize: "12px", fontWeight: 900 }}>Country Name</b>
         </Tooltip>
       ),
     },
@@ -141,72 +142,80 @@ const AllCountries = () => {
       field: "countryCode",
       width: 60,
       sortable: false,
+      headerClassName: "border border-black",
       cellClassName:
         "text-black dark:text-white text-center border border-t-0 border-r-0",
 
       renderHeader: (params) => (
         <Tooltip placement="top" title="Country 2-Letter Code">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>Country Code</b>
+          <b style={{ fontSize: "12px", fontWeight: 900 }}>Code</b>
         </Tooltip>
       ),
     },
     {
       field: "currencyCode",
       headerName: "Currency Code",
-      width: 60,
+      width: 78,
+      headerClassName: "border border-black ",
       sortable: false,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Currency Code">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>Currency Code</b>
+          <b className="" style={{ fontSize: "12px", fontWeight: 900 }}>
+            Currency
+          </b>
         </Tooltip>
       ),
     },
     {
       field: "phnCode",
       headerName: "Phone Code",
+      headerClassName: "border border-black",
       width: 60,
       sortable: false,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="Phone Code">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>Phone Code</b>
+          <b style={{ fontSize: "12px", fontWeight: 900 }}>Phone</b>
         </Tooltip>
       ),
     },
     {
       field: "state",
       headerName: "Sate",
+      headerClassName: "border border-black",
       sortable: false,
       width: 90,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
         <Tooltip placement="top" title="State">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>State</b>
+          <b style={{ fontSize: "12px", fontWeight: 900 }}>State</b>
         </Tooltip>
       ),
     },
     {
       field: "city",
       headerName: "City",
+      headerClassName: "border border-black",
       sortable: false,
       width: 95,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       headerclassname: "bold-header",
       renderHeader: (params) => (
         <Tooltip placement="top" title="City">
-          <b style={{ fontSize: "14px", fontWeight: 900 }}>City</b>
+          <b style={{ fontSize: "12px", fontWeight: 900 }}>City</b>
         </Tooltip>
       ),
     },
     {
       field: "action",
       type: "button",
+      headerClassName: "border border-black",
       sortable: false,
       width: 90,
       cellClassName: "text-black dark:text-white border border-t-0 border-r-0",
       renderHeader: (params) => (
-        <b style={{ fontSize: "14px", fontWeight: 900 }}>Action</b>
+        <b style={{ fontSize: "12px", fontWeight: 900 }}>Action</b>
       ),
       renderCell: (params) => {
         // Define a function to handle the cell click
@@ -232,7 +241,10 @@ const AllCountries = () => {
               <span>
                 <EditIcon className="text-white" style={{ fontSize: "18px" }} />
               </span>
-              <span className="text-white"> Action</span>
+              <span style={{ fontSize: "12px" }} className="text-white">
+                {" "}
+                Action
+              </span>
             </button>
             <Menu
               id="basic-menu"
@@ -289,7 +301,7 @@ const AllCountries = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <button className="dark:text-white text-black font-bold text-md ">
+              <button className="dark:text-white text-black font-myfont font-bold text-md ">
                 Show Countries Content
               </button>
             </AccordionSummary>
@@ -323,95 +335,102 @@ const AllCountries = () => {
           </Accordion>
         </div>
 
-        <div className="country-right   lg:w-[35%] xl:w-fit ">
-          {" "}
-          <Accordion expanded={accordionTwo}>
-            <AccordionSummary
-              onClick={() => setAccordionTwo(!accordionTwo)}
-              style={
-                dark
-                  ? { backgroundColor: "#242530" }
-                  : { backgroundColor: "white" }
-              }
-              expandIcon={<ExpandMoreIcon className="dark:text-white" />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className="dark:text-white">
-                <span className="text-black dark:text-white font-bold text-md">
-                  Bulk Import/Upload
-                </span>
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails className="dark:bg-gray-700">
-              <div className="relative overflow-x-auto  sm:rounded-lg">
-                <div className="px-3 py-2 flex flex-col gap-2">
-                  <h3 className="dark:text-white text-md font-semibold">
-                    *Select CSV file to upload
-                  </h3>
+        <AddNewCountry />
+      </div>
 
-                  <div className="flex gap-2">
-                    <input
-                      style={{ display: "none" }}
-                      onChange={(e) => onFileUploadHandler(e.target.files[0])}
-                      ref={selectFile}
-                      type="file"
-                      name=""
-                      id="file"
-                      accept=".csv"
-                    />
-                  </div>
+      <div className="country-right   lg:w-[35%] xl:w-fit mt-5  ">
+        {" "}
+        <Accordion expanded={accordionTwo}>
+          <AccordionSummary
+            onClick={() => setAccordionTwo(!accordionTwo)}
+            style={
+              dark
+                ? { backgroundColor: "#242530" }
+                : { backgroundColor: "white" }
+            }
+            expandIcon={<ExpandMoreIcon className="dark:text-white" />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography className="dark:text-white">
+              <span className="text-black font-myfont dark:text-white font-bold text-md">
+                Bulk Import/Upload
+              </span>
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails className="dark:bg-gray-700">
+            <div className="relative overflow-x-auto  sm:rounded-lg">
+              <div className="px-3 py-2 flex flex-col gap-2">
+                <h3 className="dark:text-white font-myfont text-md font-semibold">
+                  *Select CSV file to upload
+                </h3>
 
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={onFileHandler}
-                      className="bg-purple-900 text-white rounded-md px-4 py-2 hover:text-gray-400"
-                    >
-                      {imageLoader ? (
-                        <Circles
-                          height="22"
-                          width="45"
-                          color="#4fa94d"
-                          ariaLabel="circles-loading"
-                          wrapperStyle={{}}
-                          wrapperClass=""
-                          visible={true}
-                        />
-                      ) : (
-                        "IMPORT"
-                      )}
-                    </button>
-                    {imageLoader && (
-                      <span className="text-sm">please wait...</span>
+                <div className="flex gap-2">
+                  <input
+                    onChange={(e) => onFileUploadHandler(e.target.files[0])}
+                    ref={selectFile}
+                    type="file"
+                    name=""
+                    id="file"
+                    accept=".csv"
+                  />
+                </div>
+
+                <div className="flex items-center gap-4 mt-2 mb-2">
+                  <button
+                    onClick={onFileHandler}
+                    className="bg-purple-900 text-white rounded-md px-4 py-2 hover:text-gray-400"
+                  >
+                    {imageLoader ? (
+                      <Circles
+                        height="22"
+                        width="45"
+                        color="#4fa94d"
+                        ariaLabel="circles-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                      />
+                    ) : (
+                      "IMPORT"
                     )}
+                  </button>
+                  {imageLoader && (
+                    <span className="text-sm">please wait...</span>
+                  )}
+
+                  <button
+                    onClick={onFileHandler}
+                    className="bg-redColor text-white rounded-md px-4 py-2 hover:text-gray-400"
+                  >
+                    Upload
+                  </button>
+                </div>
+
+                <div className="flex font-myfont flex-col gap-1 dark:text-white ">
+                  <h2 className=" text-lg font-bold">NOTE : </h2>
+                  <div className="text-xs ">
+                    <p>1 - Acceptable format is CSV</p>
+                    <p>2 - No Special Char in the file</p>
+                    <p>3 - File should contain following seuence</p>
                   </div>
 
-                  <div className="flex flex-col gap-1 dark:text-white font-mono">
-                    <h2 className=" text-lg font-bold">NOTE : </h2>
-                    <div className="text-sm font-mono">
-                      <p>1 - Acceptable format is CSV</p>
-                      <p>2 - No Special Char in the file</p>
-                      <p>3 - File should contain following seuence</p>
-                    </div>
-
-                    <div className=" flex justify-center mt-1">
-                      <div className=" w-fit ">
-                        <ul className="text-sm font-mono">
-                          <li> Column A = Country</li>
-                          <li> Column B = 2-Letter Code</li>
-                          <li> Column C = Currency</li>
-                          <li> Column D = Phone Code</li>
-                        </ul>
-                      </div>
+                  <div className=" flex justify-center mt-1">
+                    <div className=" w-fit ">
+                      <ul className="text-xs ">
+                        <li> Column A = Country</li>
+                        <li> Column B = 2-Letter Code</li>
+                        <li> Column C = Currency</li>
+                        <li> Column D = Phone Code</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            </AccordionDetails>
-          </Accordion>
-        </div>
+            </div>
+          </AccordionDetails>
+        </Accordion>
       </div>
-      <AddNewCountry />
 
       <EditModalCountry open={open} setOpen={setOpen} />
       <DeleteModal open={open2} setOpen={setOpen2} />

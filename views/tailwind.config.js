@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        myfont: ["Comfortaa", "sans-serif;"],
+      },
       colors: {
         headerBg: "#242530",
         redColor: "#AC1E23",
@@ -13,6 +16,9 @@ export default {
       },
       screens: {
         lg: "1040px",
+      },
+      fontSize: {
+        customSize: "8px",
       },
     },
   },

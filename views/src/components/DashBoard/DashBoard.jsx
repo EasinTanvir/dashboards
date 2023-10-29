@@ -463,7 +463,7 @@ const DashBoard = () => {
         <div
           className={`dashboard-sidebar-right ${
             sidebarOpen ? "active" : ""
-          } w-full bg-lightMode  dark:bg-deepBlack p-2`}
+          } w-full bg-lightMode  dark:bg-deepBlack sm:px-2 px-0 py-2`}
         >
           <Outlet />
         </div>

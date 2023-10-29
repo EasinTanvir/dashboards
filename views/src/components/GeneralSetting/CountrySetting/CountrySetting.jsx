@@ -11,7 +11,7 @@ const CountrySetting = () => {
   return (
     <div>
       <div className="px-2">
-        <div className="flex flex-wrap gap-2 ">
+        <div className="flex flex-wrap gap-2 mb-8 ">
           <ActiveCountry title="Country" />
           <ActiveCountry title="State" />
           <ActiveCountry title="City" />

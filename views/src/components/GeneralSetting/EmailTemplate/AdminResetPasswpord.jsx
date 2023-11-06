@@ -53,7 +53,7 @@ const AdminResetPasswpord = () => {
     <p><strong>@user_name,</strong></p>
     <br />
     <p>Your add created successfully</p>
-    <p>We will review your add and update the status shortly</p>
+   
    <br />
     <p>Thanks</p>
   `;

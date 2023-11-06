@@ -106,7 +106,7 @@ const EmailTemplate = () => {
       headerClassName:
         "border border-black border-r-0 text-center border-t-0 border-l-0 ",
       sortable: false,
-      width: 90,
+      width: 74,
       cellClassName:
         "text-black dark:text-white text-center border border-t-0  border-r-0",
       renderHeader: (params) => (
@@ -116,7 +116,7 @@ const EmailTemplate = () => {
         const handleCellClick = (event) => {
           event.stopPropagation();
         };
-        console.log(params.id);
+
         return (
           <div onClick={handleCellClick}>
             {/* Your cell content */}

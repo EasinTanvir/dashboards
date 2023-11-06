@@ -15,12 +15,6 @@ const UserResetPasswpord = () => {
 
   const [subject, setSubject] = useState("Reset password");
 
-  const Quills = ReactQuill.Quill;
-  var Font = Quills.import("formats/font");
-
-  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
-  Quills.register(Font, true);
-
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],
@@ -37,15 +31,12 @@ const UserResetPasswpord = () => {
     ], // dropdown with defaults from theme
     // [{ font: [] }],
     [{ align: [] }],
-    [{ font: ["sans-serif", "serif", "monospace"] }],
+    [{ font: [] }],
     // ["clean"],
   ];
 
   const module = {
     toolbar: toolbarOptions,
-    clipboard: {
-      matchVisual: false,
-    },
   };
   const defaultTemplate = `
     <p><strong>@user_name,</strong></p>

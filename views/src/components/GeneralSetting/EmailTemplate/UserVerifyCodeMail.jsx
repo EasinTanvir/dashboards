@@ -15,12 +15,6 @@ const UserVerifyCodeMail = () => {
 
   const [subject, setSubject] = useState("Verify Your Code Mail");
 
-  const Quills = ReactQuill.Quill;
-  var Font = Quills.import("formats/font");
-
-  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
-  Quills.register(Font, true);
-
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],

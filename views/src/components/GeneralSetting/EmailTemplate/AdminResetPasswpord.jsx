@@ -17,11 +17,11 @@ const AdminResetPasswpord = () => {
     "Your ad has been submitted for apporval"
   );
 
-  const Quills = ReactQuill.Quill;
-  var Font = Quills.import("formats/font");
+  // const Quills = ReactQuill.Quill;
+  // var Font = Quills.import("formats/font");
 
-  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
-  Quills.register(Font, true);
+  // Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
+  // Quills.register(Font, true);
 
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -39,15 +39,12 @@ const AdminResetPasswpord = () => {
     ], // dropdown with defaults from theme
     // [{ font: [] }],
     [{ align: [] }],
-    [{ font: ["sans-serif", "serif", "monospace"] }],
+    [{ font: [] }],
     // ["clean"],
   ];
 
   const module = {
     toolbar: toolbarOptions,
-    clipboard: {
-      matchVisual: false,
-    },
   };
   const defaultTemplate = `
     <p><strong>@user_name,</strong></p>

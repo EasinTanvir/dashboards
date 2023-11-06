@@ -15,12 +15,6 @@ const AdvertiseExpireMail = () => {
 
   const [subject, setSubject] = useState("Advertisement Expire mail");
 
-  const Quills = ReactQuill.Quill;
-  var Font = Quills.import("formats/font");
-
-  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
-  Quills.register(Font, true);
-
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],

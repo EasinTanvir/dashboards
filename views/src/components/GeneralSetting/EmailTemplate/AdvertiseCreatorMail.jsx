@@ -15,11 +15,11 @@ const AdvertiseCreatorMail = () => {
 
   const [subject, setSubject] = useState("Advertisement Creation mail");
 
-  const Quills = ReactQuill.Quill;
-  var Font = Quills.import("formats/font");
+  // const Quills = ReactQuill.Quill;
+  // var Font = Quills.import("formats/font");
 
-  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
-  Quills.register(Font, true);
+  // Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
+  // Quills.register(Font, true);
 
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons

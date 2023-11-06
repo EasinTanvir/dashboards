@@ -79,7 +79,7 @@ const AdminResetPasswpord = () => {
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
             <div className="flex flex-col gap-8 ">
               <div>
-                <h1 className="font-myfont font-extrabold">Subject</h1>
+                <h1 style={{ fontWeight: 900, fontSize: "14px" }}>Subject</h1>
                 <input
                   value={subject}
                   onChange={(e) => setSubject()}
@@ -89,7 +89,7 @@ const AdminResetPasswpord = () => {
                 />
               </div>
               <div>
-                <h1 className="font-myfont font-extrabold">Message</h1>
+                <h1 style={{ fontWeight: 900, fontSize: "14px" }}>Message</h1>
                 <ReactQuill
                   value={editorValue}
                   modules={module}

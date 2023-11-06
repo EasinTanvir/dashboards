@@ -408,16 +408,16 @@ const AllCountries = () => {
                 </div>
 
                 <div className="flex font-myfont flex-col gap-1 dark:text-white ">
-                  <h2 className=" text-lg font-bold">NOTE : </h2>
-                  <div className="text-xs ">
+                  <h2 className=" font-bold">NOTE : </h2>
+                  <div style={{ fontSize: "10px" }}>
                     <p>1 - Acceptable format is CSV</p>
                     <p>2 - No Special Char in the file</p>
                     <p>3 - File should contain following seuence</p>
                   </div>
 
-                  <div className=" flex justify-center mt-1">
+                  <div className=" flex  mt-1 ms-4">
                     <div className=" w-fit ">
-                      <ul className="text-xs ">
+                      <ul style={{ fontSize: "10px" }}>
                         <li> Column A = Country</li>
                         <li> Column B = 2-Letter Code</li>
                         <li> Column C = Currency</li>

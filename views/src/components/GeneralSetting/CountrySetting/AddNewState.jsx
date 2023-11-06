@@ -112,13 +112,13 @@ const AddNewState = () => {
                       className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                       type="submit"
                     >
-                      save
+                      Reset
                     </button>{" "}
                     <button
                       className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                       type="submit"
                     >
-                      Reset
+                      Save
                     </button>
                   </div>
                 </form>

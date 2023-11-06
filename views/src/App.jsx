@@ -22,6 +22,15 @@ import AllCountries from "./components/GeneralSetting/CountrySetting/AllCountrie
 import CountryState from "./components/GeneralSetting/CountrySetting/CountryState";
 import Neighbourhood from "./components/GeneralSetting/CountrySetting/Neighbourhood";
 import MainCountry from "./components/GeneralSetting/CountrySetting/MainCountry";
+import EmailTemplate from "./components/GeneralSetting/EmailTemplate/EmailTemplate";
+import AdminResetPasswpord from "./components/GeneralSetting/EmailTemplate/AdminResetPasswpord";
+import UserResetPasswpord from "./components/GeneralSetting/EmailTemplate/UserResetPasswpord";
+import UserVerifyLinkMail from "./components/GeneralSetting/EmailTemplate/UserVerifyLinkMail";
+import UserVerifyCodeMail from "./components/GeneralSetting/EmailTemplate/UserVerifyCodeMail";
+import AdvertiseCreatorMail from "./components/GeneralSetting/EmailTemplate/AdvertiseCreatorMail";
+import AdvertiseDrafetMail from "./components/GeneralSetting/EmailTemplate/AdvertiseDrafetMail";
+import AdvertiseExpireMail from "./components/GeneralSetting/EmailTemplate/AdvertiseExpireMail";
+import AdvertiseDeleteMail from "./components/GeneralSetting/EmailTemplate/AdvertiseDeleteMail";
 
 const App = () => {
   return (
@@ -41,6 +50,38 @@ const App = () => {
           <Route path="/thirdparty-setting" element={<ThirdPartySetting />} />
           <Route path="/smtp-setting" element={<SmtpSetting />} />
           <Route path="/email-setting" element={<EmailSetting />} />
+          <Route path="/email-template" element={<EmailTemplate />}>
+            <Route path="" element={<AdminResetPasswpord />} />
+            <Route
+              path="user-reset-password"
+              element={<UserResetPasswpord />}
+            />
+            <Route
+              path="user-verify-link-mail"
+              element={<UserVerifyLinkMail />}
+            />
+            <Route
+              path="user-verify-code-mail"
+              element={<UserVerifyCodeMail />}
+            />
+            <Route
+              path="advertise-creator-mail"
+              element={<AdvertiseCreatorMail />}
+            />
+            <Route
+              path="advertise-draft-mail"
+              element={<AdvertiseDrafetMail />}
+            />
+            <Route
+              path="advertise-expire-mail"
+              element={<AdvertiseExpireMail />}
+            />
+            <Route
+              path="advertise-delete-mail"
+              element={<AdvertiseDeleteMail />}
+            />
+            <Route path="cities" element={<CountryCity />} />
+          </Route>
           <Route path="/country-setting" element={<CountrySetting />}>
             <Route path="" element={<AllCountries />} />
             <Route path="cities" element={<CountryCity />} />

@@ -13,7 +13,7 @@ const CountryHeader = () => {
   return (
     <div className=" my-1 lg:max-w-[68%] w-full font-myfont ">
       <div className="flex sm:justify-start ">
-        <ul className="flex  w-full lg:justify-between justify-start  flex-wrap lg:gap-2 gap-0    bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
+        <ul className="flex  w-full justify-between  flex-wrap lg:gap-2 gap-0    bg-white text-black dark:bg-deepBlack dark:text-white  rounded-lg ">
           <Link to="">
             <li
               onClick={() => setSelect(1)}

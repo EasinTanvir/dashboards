@@ -69,7 +69,7 @@ const AddNewCountry = () => {
           id="panel1a-header"
         >
           <Typography className="dark:text-white">
-            <span className="text-black dark:text-white font-bold font-myfont text-md">
+            <span className="text-white bg-redColor px-7 py-3 rounded-sm font-bold font-myfont text-md">
               Add New Country
             </span>
           </Typography>
@@ -201,13 +201,13 @@ const AddNewCountry = () => {
                     className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                     type="submit"
                   >
-                    save
+                    Reset
                   </button>{" "}
                   <button
                     className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
                     type="button"
                   >
-                    Reset
+                    Save
                   </button>
                 </div>
               </form>

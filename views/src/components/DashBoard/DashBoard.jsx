@@ -449,6 +449,15 @@ const DashBoard = () => {
                           }
                           className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
                         >
+                          <EmailIcon style={{ fontSize: "18px" }} />
+                          <Link to="/email-template">Email Templates</Link>
+                        </li>
+                        <li
+                          onClick={
+                            isScreenSmall && (() => setSidebarOpen(false))
+                          }
+                          className="dark:hover:bg-gray-500 sidebartext hover:bg-gray-300 -ms-3 rounded py-1 flex items-center gap-2 text-sm"
+                        >
                           <FlagIcon style={{ fontSize: "18px" }} />
                           <Link to="/country-setting">Country Setting</Link>
                         </li>

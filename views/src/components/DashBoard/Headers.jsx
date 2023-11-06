@@ -10,9 +10,10 @@ const Headers = ({ setSidebarOpen, sidebarOpen }) => {
   const { dark, setDark } = themContext();
 
   const onDarkHandler = () => {
-    document.body.classList.toggle("dark");
-    setDark(!dark);
+    // document.body.classList.toggle("dark");
+    //setDark(!dark);
   };
+
   return (
     <>
       <header className="h-12  flex items-center sticky top-0 z-10 headers dark:bg-headerBg bg-white">

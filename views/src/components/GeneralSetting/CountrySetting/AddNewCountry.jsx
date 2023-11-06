@@ -26,6 +26,10 @@ const AddNewCountry = () => {
 
   const { dark } = themContext();
   const [accordionTwo, setAccordionTwo] = useState(true);
+  const [selectedCountrye, setSelectedCountry] = useState("");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("");
+  const [selectedCountryPhone, setSelectedCountryPhone] = useState("");
+  const [selectedCurrencyCode, setSelectedCurrencyCode] = useState("");
 
   const [input, setInput] = useState({
     countryName: "eas",
@@ -48,13 +52,36 @@ const AddNewCountry = () => {
     console.log(input);
   };
 
+  const countriesData = {
+    Bangladesh: { countryCode: "BD", currencyCode: "BDT", phoneNumber: "+88" },
+    Pakistan: { countryCode: "PK", currencyCode: "PKR", phoneNumber: "+92" },
+    India: { countryCode: "IN", currencyCode: "INR", phoneNumber: "+91" },
+    Singapour: { countryCode: "SG", currencyCode: "SGD", phoneNumber: "65" },
+  };
+
+  const handleAutocompleteChange = (event, newValue) => {
+    setSelectedCountry(newValue);
+
+    const { countryCode, currencyCode, phoneNumber } =
+      countriesData[newValue.label];
+    setSelectedCountryCode(countryCode);
+    setSelectedCountryPhone(phoneNumber);
+    setSelectedCurrencyCode(currencyCode);
+  };
+
   const top100Films = [
     { label: "Bangladesh" },
     { label: "India" },
     { label: "Singapour" },
     { label: "Pakistan" },
-    { label: "London" },
   ];
+
+  const resetHandler = () => {
+    setSelectedCountryCode("");
+    setSelectedCountryPhone("");
+    setSelectedCurrencyCode("");
+    setSelectedCountry("");
+  };
   return (
     <div className="country-right    sm:w-fit   ">
       {" "}
@@ -99,8 +126,10 @@ const AddNewCountry = () => {
                             },
                           }}
                           openOnFocus={false}
+                          value={selectedCountrye}
                           onMouseDownCapture={(e) => e.stopPropagation()}
                           clearOnBlur={true}
+                          onChange={handleAutocompleteChange}
                           id="custom-input-demo"
                           options={top100Films}
                           renderInput={(params) => (
@@ -121,9 +150,7 @@ const AddNewCountry = () => {
                         Country Code
                       </b>
                       <input
-                        onChange={onChangeHandler}
-                        defaultValue={input.countryCode}
-                        required
+                        value={selectedCountryCode}
                         className="dark:text-white sm:w-36 text-sm text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
                         name="countryCode"
@@ -140,8 +167,7 @@ const AddNewCountry = () => {
                         Currency Code
                       </b>
                       <input
-                        onChange={onChangeHandler}
-                        defaultValue={input.currencyCode}
+                        value={selectedCurrencyCode}
                         required
                         className="text-black sm:w-36 text-sm dark:text-white bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
                         type="text"
@@ -155,11 +181,9 @@ const AddNewCountry = () => {
                         Phone Code
                       </b>
                       <input
-                        onChange={onChangeHandler}
-                        defaultValue={input.phoneCode}
-                        required
+                        value={selectedCountryPhone}
                         className="dark:text-white text-sm sm:w-36 text-black bg-transparent outline-none border border-gray-400 py-1 rounded-md px-2"
-                        type="number"
+                        type="text"
                         name="phoneCode"
                         id=""
                         placeholder=" Phone Code"
@@ -198,8 +222,9 @@ const AddNewCountry = () => {
                 </div>
                 <div className=" gap-2 mt-4 mb-4 flex justify-around">
                   <button
+                    onClick={resetHandler}
                     className="btn rounded-md w-24 bg-purple-800 px-4 py-2  hover:text-gray-300 text-white"
-                    type="submit"
+                    type="button"
                   >
                     Reset
                   </button>{" "}

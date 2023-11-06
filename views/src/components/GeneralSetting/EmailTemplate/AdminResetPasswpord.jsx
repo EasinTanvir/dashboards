@@ -77,7 +77,7 @@ const AdminResetPasswpord = () => {
         </AccordionSummary>
         <AccordionDetails className="dark:bg-gray-700">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 ">
               <div>
                 <h1 className="font-myfont font-extrabold">Subject</h1>
                 <input
@@ -100,7 +100,7 @@ const AdminResetPasswpord = () => {
 
               <div
                 className="text-red-800  font-myfont"
-                style={{ fontSize: "12px" }}
+                style={{ fontSize: "11px" }}
               >
                 <p>@name will be replaced dynamically with name</p>
                 <p>@user_name will be replaced dynamically with username</p>

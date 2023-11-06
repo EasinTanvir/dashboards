@@ -17,6 +17,12 @@ const AdminResetPasswpord = () => {
     "Your ad has been submitted for apporval"
   );
 
+  const Quills = ReactQuill.Quill;
+  var Font = Quills.import("formats/font");
+
+  Font.whitelist = ["Ubuntu", "Raleway", "Roboto"];
+  Quills.register(Font, true);
+
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],
@@ -33,12 +39,15 @@ const AdminResetPasswpord = () => {
     ], // dropdown with defaults from theme
     // [{ font: [] }],
     [{ align: [] }],
-
+    [{ font: ["sans-serif", "serif", "monospace"] }],
     // ["clean"],
   ];
 
   const module = {
     toolbar: toolbarOptions,
+    clipboard: {
+      matchVisual: false,
+    },
   };
   const defaultTemplate = `
     <p><strong>@user_name,</strong></p>
@@ -72,7 +81,7 @@ const AdminResetPasswpord = () => {
           id="panel1a-header"
         >
           <button className="dark:text-white text-black font-myfont font-bold text-md ">
-            Add Creator Email Template
+            Creation Email Template
           </button>
         </AccordionSummary>
         <AccordionDetails className="dark:bg-gray-700">
